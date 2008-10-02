@@ -16,7 +16,14 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-void RunTests()
+int RunTests()
 {
 	puts("Unit testing...");
+	// testing::InitGoogleTest(NULL, NULL);
+	return RUN_ALL_TESTS();
 }
+
+TEST(Test4Test, SimpleAssertion)
+{
+	// EXPECT_EQ(1, 2-1);
+};

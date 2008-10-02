@@ -9,7 +9,7 @@
 #define JAYFRAMEWORK_H_
 
 #include <gtest/gtest.h>
-void RunTests();
+int RunTests();
 
 
 #endif /* JAYFRAMEWORK_H_ */
