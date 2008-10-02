@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <gtest/gtest.h>
 
 int main(void) {
 	puts("Hello World!");
