@@ -8,9 +8,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <gtest/gtest.h>
+#include "JayFramework.h"
 
 int main(void) {
+	RunTests();
 	puts("Hello World!");
 	return EXIT_SUCCESS;
+}
+
+void RunTests()
+{
+	puts("Unit testing...");
 }
