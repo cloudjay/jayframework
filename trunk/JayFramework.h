@@ -8,7 +8,7 @@
 #ifndef JAYFRAMEWORK_H_
 #define JAYFRAMEWORK_H_
 
-#include <gtest/gtest.h>
+//#include <gtest/gtest.h>
 int RunTests();
 
 
