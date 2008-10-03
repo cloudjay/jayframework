@@ -2,7 +2,7 @@
  * JayFramework.h
  *
  *  Created on: 2008. 10. 2
- *      Author: ncc1701
+ *      Author: Jay
  */
 
 #ifndef JAYFRAMEWORK_H_
