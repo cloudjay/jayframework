@@ -10,21 +10,11 @@
 
 int main(void) {
 	RunTests();
-	puts("Hello World!");
 	return EXIT_SUCCESS;
 }
 
 int RunTests()
 {
 	puts("Unit testing...");
-	// testing::InitGoogleTest(NULL, NULL);
-	// return RUN_ALL_TESTS();
-	return 0;
+	return UnitTest::RunAllTests();
 }
-
-/*
-TEST(Test4Test, SimpleAssertion)
-{
-	// EXPECT_EQ(1, 2-1);
-};
-*/
