@@ -1,9 +1,7 @@
 //============================================================================
 // Name        : JayFramework.cpp
 // Author      : Jay
-// Version     :
 // Copyright   : copyleft
-// Description : Hello World in C, Ansi-style
 //============================================================================
 
 #include <stdio.h>
