@@ -1,1 +1,2 @@
 #define EXPAT
+#define UNITTEST

@@ -6,11 +6,6 @@ int main(void) {
 #ifdef UNITTEST
 	RunTests();
 #endif
-#ifdef EXPAT
-	XML_Char	encoding[] = L"UTF-16";
-	XML_Parser	parser = XML_ParserCreate(encoding);
-	XML_ParserFree(parser);
-#endif
 	return EXIT_SUCCESS;
 }
 
@@ -20,5 +15,15 @@ int RunTests()
 	puts("Unit testing...");
 	return UnitTest::RunAllTests();
 }
+
+#ifdef EXPAT
+TEST(ParserCreate)
+{
+	XML_Char	encoding[] = L"UTF-16";
+	XML_Parser	parser = XML_ParserCreate(encoding);
+	XML_ParserFree(parser);
+}
+#endif
+
 #endif
 
