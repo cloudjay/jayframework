@@ -7,7 +7,7 @@
 int RunTests();
 #endif
 
-// #ifdef EXPAT
+#ifdef EXPAT
 #include "expat/expat.h"
-
+#endif
 #endif /* JAYFRAMEWORK_H_ */
