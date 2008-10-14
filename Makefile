@@ -2,7 +2,7 @@ CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I.
 
 OBJS =		JayFramework.o
 
-LIBS =		lib/libexpatw.lib
+LIBS =		lib/libexpatw.lib lib/libUnitTest++.a
 
 TARGET =	JayFramework.exe
 
