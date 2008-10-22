@@ -4,7 +4,8 @@
 #include "define.h"
 
 #ifdef EXPAT
-#define  XML_UNICODE_WCHAR_T	// XML Document encoding is UTF-16
+/** \brief XML Document encoding is UTF-16 */	
+#define  XML_UNICODE_WCHAR_T
 #include "expat/expat.h"
 #endif
 
