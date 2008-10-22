@@ -10,6 +10,9 @@ int main(void) {
 }
 
 #ifdef UNITTEST
+/**
+\brief Runs all unit tests.
+*/
 int RunTests()
 {
 	puts("Unit testing...");
