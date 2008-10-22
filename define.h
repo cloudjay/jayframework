@@ -1,4 +1,4 @@
-﻿/** \file define.h
+/** \file define.h
 	\brief 포함할 Feature를 정의한다.
 */
 
