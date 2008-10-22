@@ -1,3 +1,5 @@
+#pragma warning(disable: 4819)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "JayFramework.h"
