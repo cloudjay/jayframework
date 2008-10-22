@@ -92,7 +92,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine=""
+				CommandLine="doxygen"
 			/>
 		</Configuration>
 		<Configuration
@@ -260,11 +260,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
+					RelativePath=".\UnitTest++\TimeHelpers.h"
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
+					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
 					>
 				</File>
 				<File
