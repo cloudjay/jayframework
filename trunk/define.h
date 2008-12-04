@@ -1,5 +1,5 @@
 /** \file define.h
-	\brief í¬í•¨í•  Featureë¥¼ ì •ì˜í•œë‹¤.
+	\brief Æ÷ÇÔÇÒ Feature¸¦ Á¤ÀÇÇÑ´Ù.
 */
 
 /** \brief EXPAT SAX XML Parser */
