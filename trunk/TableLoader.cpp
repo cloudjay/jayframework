@@ -16,10 +16,10 @@ BOOL TableLoader::Load(ISax2dTable* table)
 
 	// Open file
 	FILE*	pFile = NULL;
-	errno_t err = _wfopen_s(&pFile, desc.fileName.c_str(), L"r");
+	errno_t	err = _wfopen_s(&pFile, desc.fileName.c_str(), L"r");
 	if (pFile == NULL)
 		return FALSE;
-	int		len = fread(m_xml, sizeof(char), sizeof(m_xml), pFile);
+	int len = fread(m_xml, sizeof(char), sizeof(m_xml), pFile);
 	if (len == 0)
 		return FALSE;
 
@@ -31,8 +31,8 @@ BOOL TableLoader::Load(ISax2dTable* table)
 
 #ifdef EXPAT
 	// Parse by Expat
-	XML_Parser					parser	= XML_ParserCreate(XML_INPUT_INCODING);
-	XML_SetUserData				(parser, &m_walker);
+	XML_Parser			parser	= XML_ParserCreate(XML_INPUT_INCODING);
+	XML_SetUserData			(parser, &m_walker);
 	XML_SetElementHandler		(parser, &TableLoader::OnStartElement, &TableLoader::OnEndElement);
 	XML_SetCharacterDataHandler	(parser, &TableLoader::OnCharacterData);
 	XML_Status status = XML_Parse(parser, m_xml, len, TRUE);

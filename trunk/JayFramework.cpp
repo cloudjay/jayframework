@@ -39,21 +39,21 @@ struct SampleFixture
 
 TEST_FIXTURE(SampleFixture, ParserCreate)
 {
-	XML_Parser	parser = XML_ParserCreate(XML_INPUT_INCODING);
+	XML_Parser parser = XML_ParserCreate(XML_INPUT_INCODING);
 	XML_ParserFree(parser);
 }
 
 TEST_FIXTURE(SampleFixture, SampleFileExist)
 {
-	int			len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
+	int len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
 	CHECK(len > 0);
 }
 
 TEST_FIXTURE(SampleFixture, ParseSample)
 {
 	// Init
-	int			len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
-	XML_Parser	parser = XML_ParserCreate(XML_INPUT_INCODING);
+	int len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
+	XML_Parser parser = XML_ParserCreate(XML_INPUT_INCODING);
 
 	// Parse
 	XML_Parse(parser, xml, len, TRUE);

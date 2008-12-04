@@ -15,9 +15,8 @@ void CCTable::RemoveFromCache(HREC hRec)
 /** Delete cached pointers! */
 void CCTable::ClearCache()
 {
-	for (HRecList::iterator it = m_cachedHandleList.begin();
-		 it != m_cachedHandleList.end();
-		 ++it)
+	HRecList::iterator it = m_cachedHandleList.begin();
+	for (; it != m_cachedHandleList.end(); ++it)
 		SAFE_DELETE(*it);
 	m_cachedHandleList.clear();
 }
