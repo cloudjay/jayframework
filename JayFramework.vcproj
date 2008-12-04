@@ -185,6 +185,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ITable.h"
+				>
+			</File>
+			<File
 				RelativePath=".\JayFramework.h"
 				>
 			</File>
@@ -202,10 +206,6 @@
 			</File>
 			<File
 				RelativePath=".\XML.h"
-				>
-			</File>
-			<File
-				RelativePath=".\XMLTable.h"
 				>
 			</File>
 			<Filter
@@ -284,11 +284,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
+					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
+					RelativePath=".\UnitTest++\TimeHelpers.h"
 					>
 				</File>
 				<File
@@ -388,10 +388,6 @@
 			</File>
 			<File
 				RelativePath=".\TableLoader.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\XMLTable.cpp"
 				>
 			</File>
 		</Filter>
