@@ -92,7 +92,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="doxygen"
+				CommandLine="doxygen&#x0D;&#x0A;$(OutDir)\$(ProjectName).exe&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration
@@ -177,11 +177,35 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\CCTable.h"
+				>
+			</File>
+			<File
 				RelativePath=".\define.h"
 				>
 			</File>
 			<File
 				RelativePath=".\JayFramework.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SampleTable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TableLoader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\typedef.h"
+				>
+			</File>
+			<File
+				RelativePath=".\XML.h"
+				>
+			</File>
+			<File
+				RelativePath=".\XMLTable.h"
 				>
 			</File>
 			<Filter
@@ -351,10 +375,30 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\CCTable.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\JayFramework.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\SampleTable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TableLoader.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\XMLTable.cpp"
+				>
+			</File>
 		</Filter>
+		<File
+			RelativePath=".\Sample.xml"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
