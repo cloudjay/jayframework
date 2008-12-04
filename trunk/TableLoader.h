@@ -13,7 +13,7 @@ class TableLoader
 		wchar_t		curField[MAX_XML_TAG_NAME_SIZE];
 
 		void		CreateRecord()	{ if (pTable) curRec = pTable->CreateRecord(); }
-		void		AddRecord()		{ if (pTable) pTable->AddRecord(curRec); curRec = NULL; }
+		void		AddRecord()	{ if (pTable) pTable->AddRecord(curRec); curRec = NULL; }
 		void		ClearField()	{ MEMSET_NULL(curField); }
 		BOOL		HasCurField()	{ return (pTable && curRec && curField && wcslen(curField)); }
 		void		AddField(wchar_t* contents)  { if (pTable) pTable->AddField(curRec, curField, contents); }
