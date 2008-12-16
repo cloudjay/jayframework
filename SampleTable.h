@@ -15,6 +15,7 @@ struct SampleItem
 typedef std::vector<SampleItem*>		SampleItemVec;
 typedef std::vector<SampleItem*>::iterator	SampleItemVecItor;
 
+/** \brief Table for sample xml file */
 class SampleTable : public CCTable, public ITable
 {
 public:

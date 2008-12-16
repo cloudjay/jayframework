@@ -1,9 +1,7 @@
 #include "TableLoader.h"
 #include <assert.h>
 
-/**
-\brief Parse XML and fill in the table
-*/
+/** \brief Parse XML and fill in the table */
 BOOL TableLoader::Load(ISax2dTable* table)
 {
 	assert(table);
@@ -53,6 +51,7 @@ BOOL TableLoader::Load(ISax2dTable* table)
 }
 
 #ifdef EXPAT
+/** \brief Expat start element handler */
 void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, const XML_Char **atts)
 {
 	assert(userData);
@@ -68,6 +67,7 @@ void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, c
 	}
 }
 
+/** \brief Expat end element handler */
 void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 {
 	assert(userData);
@@ -81,6 +81,7 @@ void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 	}
 }
 
+/** \brief Expat CDATA handler */
 void XMLCALL TableLoader::OnCharacterData(void *userData, const XML_Char *s, int len)
 {
 	assert(userData);
