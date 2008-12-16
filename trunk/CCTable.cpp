@@ -1,5 +1,6 @@
 #include "CCTable.h"
 
+/** \brief Removes a cached HREC. Doesn't delete that HREC. */
 void CCTable::RemoveFromCache(HREC hRec)
 {
 	HRecList::iterator it = m_cachedHandleList.begin();
@@ -12,7 +13,7 @@ void CCTable::RemoveFromCache(HREC hRec)
 		m_cachedHandleList.erase(it);
 }
 
-/** Delete cached pointers! */
+/** \brief Clear and delete all cached HRECs. */
 void CCTable::ClearCache()
 {
 	HRecList::iterator it = m_cachedHandleList.begin();
