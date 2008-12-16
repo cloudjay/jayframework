@@ -1,5 +1,6 @@
 #include "TableLoader.h"
 #include <assert.h>
+#include <iostream>
 
 /** \brief Parse XML and fill in the table */
 BOOL TableLoader::Load(ISax2dTable* table)
@@ -65,6 +66,9 @@ void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, c
 	{
 		wcsncpy_s(pWalker->curField, MAX_XML_TAG_NAME_SIZE, name, MAX_XML_TAG_NAME_SIZE-1);
 	}
+#ifdef _DEBUG
+	std::wcout<<L"OnStartElement: "<<name<<L"\n";
+#endif
 }
 
 /** \brief Expat end element handler */
@@ -79,6 +83,9 @@ void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 		if (!_wcsicmp(pWalker->curField, name))
 			pWalker->ClearField();
 	}
+#ifdef _DEBUG
+	std::wcout<<L"OnEndElement:   "<<name<<L"\n";
+#endif
 }
 
 /** \brief Expat CDATA handler */
@@ -91,6 +98,9 @@ void XMLCALL TableLoader::OnCharacterData(void *userData, const XML_Char *s, int
 		wchar_t	buf[MAX_XML_TAG_NAME_SIZE] = {0,};
 		wcsncpy_s(buf, MAX_XML_TAG_NAME_SIZE, s, len);
 		pWalker->AddField(buf);
+#ifdef _DEBUG
+		std::wcout<<L"OnCDATA: "<<buf<<L"\n";
+#endif
 	}
 }
 #endif // EXPAT

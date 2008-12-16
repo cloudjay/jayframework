@@ -8,7 +8,7 @@
 
 struct SampleItem
 {
-	string	name;
+	wstring	name;
 	int	price;
 };
 
@@ -26,7 +26,7 @@ public:
 	// ISax2dTable
 	//---------------------------------------
 	virtual HREC		CreateRecord();
-	virtual void		AddField(HREC hRec, const string& fieldName, const string& fieldVal);
+	virtual void		AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal);
 	virtual void		AddRecord(HREC hRec);
 
 	//---------------------------------------

@@ -7,7 +7,7 @@ HREC SampleTable::CreateRecord()
 	return pRec;
 }
 
-void SampleTable::AddField(HREC hRec, const string &fieldName, const string &fieldVal)
+void SampleTable::AddField(HREC hRec, const wstring &fieldName, const wstring &fieldVal)
 {
 	SampleItem* pRec = (SampleItem*)hRec;
 	const wchar_t* pField = fieldName.c_str();
@@ -36,8 +36,8 @@ TEST(SampleTable)
 {
 	SampleTable sampleTable;
 	HREC rec = sampleTable.CreateRecord();
-	sampleTable.AddField(rec, string(L"name"), string(L"apple"));
-	sampleTable.AddField(rec, string(L"price"), string(L"1000"));
+	sampleTable.AddField(rec, wstring(L"name"), wstring(L"apple"));
+	sampleTable.AddField(rec, wstring(L"price"), wstring(L"1000"));
 	CHECK_EQUAL(1, sampleTable.GetCachedHandleCount());
 
 	sampleTable.AddRecord(rec);
@@ -48,7 +48,7 @@ TEST(SampleTable)
 #include "TableLoader.h"
 TEST(LoadSampleTable)
 {
-	TableLoader loader;
+	TableLoader	loader;
 	SampleTable	table;
 	CHECK(loader.Load(&table));
 	CHECK_EQUAL(2, table.GetRecCount());	

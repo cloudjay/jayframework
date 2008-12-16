@@ -15,7 +15,7 @@ public:
 	//---------------------------------------
 	virtual const TableDesc&	GetDesc()		{ return m_desc; }
 	virtual HREC			CreateRecord()		{ return 0; }
-	virtual void			AddField(HREC hRec, const string& fieldName, const string& fieldVal) {}
+	virtual void			AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal) {}
 	virtual void			AddRecord(HREC hRec)	{}
 
 	void				AddToCache(HREC hRec)	{ m_cachedHandleList.push_back(hRec); }
