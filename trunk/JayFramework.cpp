@@ -70,4 +70,16 @@ TEST_FIXTURE(SampleFixture, ParseSample)
 
 } // SUITE(ParseSampleXml)
 #endif	// EXPAT
+
+#ifdef LUA
+TEST(LuaSample)
+{
+	lua_State *lua = lua_open();
+	luaL_openlibs(lua);	// to use io libs in lua
+	if (!luaL_loadfile(lua, "Sample.lua"))
+		lua_call(lua, 0, 0);
+	lua_close(lua);
+}
+#endif	// LUA
+
 #endif	// UNITTEST

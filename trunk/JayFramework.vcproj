@@ -62,7 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libexpatw.lib libUnitTest++.lib"
+				AdditionalDependencies="libexpatw.lib libUnitTest++.lib lua51.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="lib"
 				IgnoreAllDefaultLibraries="false"
@@ -285,11 +285,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
+					RelativePath=".\UnitTest++\TimeHelpers.h"
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
+					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
 					>
 				</File>
 				<File
@@ -369,6 +369,30 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="lua"
+				>
+				<File
+					RelativePath=".\lua\lauxlib.h"
+					>
+				</File>
+				<File
+					RelativePath=".\lua\lua.h"
+					>
+				</File>
+				<File
+					RelativePath=".\lua\lua.hpp"
+					>
+				</File>
+				<File
+					RelativePath=".\lua\luaconf.h"
+					>
+				</File>
+				<File
+					RelativePath=".\lua\lualib.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Source Files"
@@ -392,6 +416,10 @@
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\Sample.lua"
+			>
+		</File>
 		<File
 			RelativePath=".\Sample.xml"
 			>

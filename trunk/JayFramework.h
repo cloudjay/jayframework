@@ -16,6 +16,10 @@
 	int RunTests();
 #endif
 
+#ifdef LUA
+	#include "lua/lua.hpp"
+#endif
+
 #ifndef SAFE_DELETE
 #define SAFE_DELETE(x) { if (x) delete x; x = NULL; }
 #endif

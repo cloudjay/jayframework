@@ -2,8 +2,6 @@
 	\brief common types
 */
 
-#include <string>
-
 #ifndef BOOL
 #define BOOL int
 #endif
