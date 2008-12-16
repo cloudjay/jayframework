@@ -29,7 +29,11 @@ struct SampleFixture
 
 	SampleFixture() {
 		sampleFile = NULL;
+#ifdef WIN32
 		fopen_s(&sampleFile, "Sample.xml", "r");
+#else
+		sampleFile = fopen("Sample.xml", "r");
+#endif
 	}
 	~SampleFixture() {
 		if (sampleFile)

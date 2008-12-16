@@ -4,9 +4,6 @@
 
 #include <string>
 
-/** \brief 문자열은 유니코드만. */
-typedef std::wstring string;
-
 #ifndef BOOL
 #define BOOL int
 #endif
