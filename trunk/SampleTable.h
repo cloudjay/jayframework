@@ -3,9 +3,6 @@
 
 #include "CCTable.h"
 
-/** \brief Sample xml file name to load */
-#define SAMPLE_XML_FILE		L"Sample.xml"
-
 struct SampleItem
 {
 	wstring	name;
@@ -33,9 +30,10 @@ public:
 	// ITable
 	//---------------------------------------
 	unsigned		GetRecCount() { return m_table.size(); }
+	void			SetFileName(const wchar_t* fileName);
 
 private:
-	void			InitDesc() { m_desc.fileName = SAMPLE_XML_FILE; m_desc.recName = L"item"; }
+	void			InitDesc() { m_desc.recName = L"item"; }
 	void			Clear();
 	SampleItemVec		m_table;
 };
