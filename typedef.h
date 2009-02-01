@@ -2,8 +2,10 @@
 	\brief common types
 */
 
+#ifndef _WINDEF_
 #ifndef BOOL
 #define BOOL int
+#endif
 #endif
 #ifndef TRUE
 #define TRUE 1

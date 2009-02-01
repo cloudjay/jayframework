@@ -25,7 +25,7 @@ public:
 };
 
 class ITable {
-	virtual unsigned	GetRecCount() = 0;
+	virtual const unsigned	GetRecCount() const = 0;
 };
 
 #endif // _XMLTABLE_H_
