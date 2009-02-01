@@ -202,6 +202,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\TableMapper.h"
+				>
+			</File>
+			<File
 				RelativePath=".\typedef.h"
 				>
 			</File>
@@ -285,11 +289,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
+					RelativePath=".\UnitTest++\TimeHelpers.h"
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
+					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
 					>
 				</File>
 				<File
@@ -413,6 +417,10 @@
 			</File>
 			<File
 				RelativePath=".\TableLoader.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TableMapper.cpp"
 				>
 			</File>
 		</Filter>

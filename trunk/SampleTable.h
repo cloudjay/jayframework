@@ -29,8 +29,10 @@ public:
 	//---------------------------------------
 	// ITable
 	//---------------------------------------
-	unsigned		GetRecCount() { return m_table.size(); }
+	const unsigned		GetRecCount() const { return m_table.size(); }
 	void			SetFileName(const wchar_t* fileName);
+
+	const SampleItem*	GetNthItem(const unsigned int n) const;
 
 private:
 	void			InitDesc() { m_desc.recName = L"item"; }

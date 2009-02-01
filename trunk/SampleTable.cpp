@@ -29,6 +29,15 @@ void SampleTable::SetFileName(const wchar_t* fileName)
 		m_desc.fileName = fileName;
 }
 
+const SampleItem* SampleTable::GetNthItem(const unsigned int n) const
+{
+	if (n<GetRecCount())
+	{
+		return m_table[n];
+	}
+	return NULL;
+}
+
 void SampleTable::Clear()
 {
 	for (SampleItemVecItor it = m_table.begin(); it != m_table.end(); ++it)
