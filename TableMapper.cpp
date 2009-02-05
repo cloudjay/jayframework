@@ -1,8 +1,10 @@
 #include "TableMapper.h"
 #include <assert.h>
 #include <process.h>
+#include <iostream>
+#include <stdio.h>
 
-void TableMapper::StartMapping()
+void TableMapper::Map()
 {
 	if (m_pTable == NULL)
 		return;
@@ -14,6 +16,11 @@ void TableMapper::StartMapping()
 		if (pSample)
 		{
 			m_map.insert(std::make_pair(pSample->price, pSample->name));
+#ifdef _DEBUG_MSG
+			wchar_t buf[1024] = {0,};
+			swprintf_s(buf, L"Insert to map: %d:%s\n", pSample->price, pSample->name.c_str());
+			std::wcout<<buf;
+#endif
 		}
 	}
 	if (m_pShuffler)
@@ -28,6 +35,7 @@ void TableShuffler::Shuffle(const SampleMap* map)
 	{
 		m_map.insert(std::make_pair(it->first, it->second));
 	}
+	++m_count;
 	LeaveCriticalSection(&m_cs);
 }
 
@@ -41,6 +49,12 @@ void TableReducer::Reduce(const SampleMap& map)
 		else
 			m_countMap.insert(std::make_pair(it->first, 1));
 	}
+}
+
+void TableReducer::PrintOutput()
+{
+	for (CountMapItor it = m_countMap.begin(); it != m_countMap.end(); ++it)
+		std::wcout<<L"price "<<it->first<<L" counts "<<it->second<<L"\n";
 }
 
 #ifdef UNITTEST
@@ -70,13 +84,23 @@ struct SampleMapper
 	}
 };
 
+void MapThread(void* _mapper)
+{
+	TableMapper *mapper = (TableMapper*)_mapper;
+	mapper->Map();
+}
+
 TEST_FIXTURE(SampleMapper, MapShuffleReduce)
 {
-	mapper1.StartMapping();
-	mapper2.StartMapping();
-
+	_beginthread(MapThread, 0, &mapper1);
+	_beginthread(MapThread, 0, &mapper2);
+	while (shuffler.GetShuffleCount()<2)
+		Sleep(1000);
 	TableReducer	reducer;
 	reducer.Reduce(shuffler.GetMap());
+#ifdef _DEBUG_MSG
+	reducer.PrintOutput();
+#endif
 }
 
 }
