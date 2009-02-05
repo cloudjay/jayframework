@@ -18,7 +18,7 @@ public:
 
 	void			SetTable(const SampleTable* table) { m_pTable = table; }
 	void			SetShuffler(TableShuffler* shuffler) { m_pShuffler = shuffler; }
-	void			StartMapping();
+	void			Map();
 	const unsigned		GetRecCount()			{ return m_map.size(); }
 	const SampleMap&	GetMap()			{ return m_map; }
 
@@ -31,15 +31,18 @@ private:
 class TableShuffler
 {
 public:
-	TableShuffler()		 { InitializeCriticalSection(&m_cs); }
+	TableShuffler()		 { InitializeCriticalSection(&m_cs); m_count = 0; }
 	virtual ~TableShuffler() { DeleteCriticalSection(&m_cs); }
 
 	void			Shuffle(const SampleMap* map);
 	const unsigned		GetRecCount()			{ return m_map.size(); }
 	const SampleMap&	GetMap()			{ return m_map; }
+	const unsigned		GetShuffleCount()		{ return m_count; }
+
 private:
 	CRITICAL_SECTION	m_cs;
 	SampleMap		m_map;
+	unsigned		m_count;
 };
 
 typedef	std::map<int, int>		CountMap;
@@ -52,6 +55,7 @@ public:
 	virtual ~TableReducer() {}
 
 	void			Reduce(const SampleMap& map);
+	void			PrintOutput();
 
 private:
 	CountMap		m_countMap;
