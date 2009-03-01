@@ -8,6 +8,6 @@
 #define EXPAT
 /** \brief UnitTest++ */
 #define UNITTEST
-#endif
 /** \brief Lua */
-// #define LUA
+#define LUA
+#endif
