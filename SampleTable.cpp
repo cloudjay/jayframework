@@ -1,4 +1,5 @@
 #include "SampleTable.h"
+#include <wchar.h>
 
 HREC SampleTable::CreateRecord()
 {
@@ -13,8 +14,10 @@ void SampleTable::AddField(HREC hRec, const wstring &fieldName, const wstring &f
 	const wchar_t* pField = fieldName.c_str();
 	if (!_wcsicmp(pField, L"name"))
 		pRec->name = fieldVal;
-	else if (!_wcsicmp(pField, L"price"))
-		pRec->price = _wtoi(fieldVal.c_str());
+	else if (!_wcsicmp(pField, L"price")) {
+		wchar_t* pEnd = NULL;
+		pRec->price = wcstol(fieldVal.c_str(), &pEnd, 10);
+	}
 }
 
 void SampleTable::AddRecord(HREC hRec)

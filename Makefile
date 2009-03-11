@@ -1,8 +1,8 @@
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I.
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. 
 
-OBJS =		JayFramework.o
+OBJS =		JayFramework.o CCTable.o SampleTable.o
 
-LIBS =		lib/libexpatw.lib lib/libUnitTest++.lib
+LIBS =		lib/libexpatw.lib
 
 TARGET =	JayFramework.exe
 

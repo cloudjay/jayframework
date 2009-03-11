@@ -2,13 +2,16 @@
 #define _XMLTABLE_H_
 
 #include "JayFramework.h"
-
-#include <string>
 #include <vector>
 
 using namespace std;
 
-typedef void*		HREC;
+class IRec {
+public:
+	virtual int		GetIndex() = 0;
+};
+
+typedef IRec*		HREC;
 typedef vector<HREC>	HRecList;
 
 struct TableDesc {

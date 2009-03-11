@@ -14,7 +14,7 @@ public:
 	// ISax2dTable
 	//---------------------------------------
 	virtual const TableDesc&	GetDesc()		{ return m_desc; }
-	virtual HREC			CreateRecord()		{ return 0; }
+	virtual HREC			CreateRecord()		{ return NULL; }
 	virtual void			AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal) {}
 	virtual void			AddRecord(HREC hRec)	{}
 
