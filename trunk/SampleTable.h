@@ -3,8 +3,16 @@
 
 #include "CCTable.h"
 
-struct SampleItem
+class SampleItem : public IRec
 {
+public:
+	virtual ~SampleItem() {}
+
+	//---------------------------------------
+	// IRec
+	//---------------------------------------
+	int	GetIndex() { return 0; }
+
 	wstring	name;
 	int	price;
 };

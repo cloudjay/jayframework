@@ -13,3 +13,13 @@
 #ifndef FALSE
 #define FALSE 0
 #endif
+
+//-----------------------------
+// String definition
+//-----------------------------
+#include <string>
+#ifdef __CYGWIN__
+namespace std {
+	typedef std::basic_string <wchar_t> wstring;
+};
+#endif
