@@ -8,11 +8,13 @@ using namespace std;
 
 class IRec {
 public:
-	virtual int		GetIndex() = 0;
+	virtual void		SetValue(const wstring& field, const wstring& value) = 0;
 };
 
-typedef IRec*		HREC;
-typedef vector<HREC>	HRecList;
+typedef IRec*			HREC;
+typedef vector<HREC>		HRecList;
+typedef HRecList::iterator	HRecItor;
+typedef HRecList::const_iterator HRecCItor;
 
 struct TableDesc {
 	wstring fileName;
@@ -28,7 +30,6 @@ public:
 };
 
 class ITable {
-	virtual const unsigned	GetRecCount() const = 0;
 };
 
 #endif // _XMLTABLE_H_

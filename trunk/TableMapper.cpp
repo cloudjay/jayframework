@@ -9,22 +9,25 @@ void TableMapper::Map()
 	if (m_pTable == NULL)
 		return;
 	m_map.clear();
-	unsigned int count = m_pTable->GetRecCount();
-	for (unsigned int i=0; i<count; ++i)
-	{
-		const SampleItem* pSample = m_pTable->GetNthItem(i);
-		if (pSample)
-		{
-			m_map.insert(std::make_pair(pSample->price, pSample->name));
-#ifdef _DEBUG_MSG
-			wchar_t buf[1024] = {0,};
-			swprintf_s(buf, L"Insert to map: %d:%s\n", pSample->price, pSample->name.c_str());
-			std::wcout<<buf;
-#endif
-		}
-	}
+	HRecCItor beginIt = m_pTable->GetBeginCIterator();
+	HRecCItor endIt   = m_pTable->GetEndCIterator();
+	for (; beginIt != endIt; ++beginIt)
+		MapItem(*beginIt);
 	if (m_pShuffler)
 		m_pShuffler->Shuffle(&m_map);
+}
+
+void TableMapper::MapItem(const HREC pRec)
+{
+	const SampleItem* pSample = (const SampleItem*)pRec;
+	if (pSample == NULL)
+		return;
+	m_map.insert(std::make_pair(pSample->price, pSample->name));
+#ifdef _DEBUG_MSG
+	wchar_t buf[1024] = {0,};
+	swprintf_s(buf, L"Insert to map: %d:%s\n", pSample->price, pSample->name.c_str());
+	std::wcout<<buf;
+#endif
 }
 
 void TableShuffler::Shuffle(const SampleMap* map)
@@ -42,13 +45,18 @@ void TableShuffler::Shuffle(const SampleMap* map)
 void TableReducer::Reduce(const SampleMap& map)
 {
 	for (SampleMapCItor it = map.begin(); it != map.end(); ++it)
+		Count(it->first);
+}
+
+void TableReducer::Count(int number)
+{
+	CountMapItor countIt = m_countMap.find(number);
+	if (countIt != m_countMap.end())
 	{
-		CountMapItor countIt = m_countMap.find(it->first);
-		if (countIt != m_countMap.end())
-			countIt->second += 1;
-		else
-			m_countMap.insert(std::make_pair(it->first, 1));
+		countIt->second += 1;
+		return;
 	}
+	m_countMap.insert(std::make_pair(number, 1));
 }
 
 void TableReducer::PrintOutput()

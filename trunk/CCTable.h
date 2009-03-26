@@ -15,8 +15,12 @@ public:
 	//---------------------------------------
 	virtual const TableDesc&	GetDesc()		{ return m_desc; }
 	virtual HREC			CreateRecord()		{ return NULL; }
-	virtual void			AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal) {}
-	virtual void			AddRecord(HREC hRec)	{}
+	virtual void			AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal);
+	virtual void			AddRecord(HREC hRec);
+
+	const unsigned			GetRecCount() const	{ return m_list.size(); }
+	HRecCItor			GetBeginCIterator() const { return m_list.begin(); }
+	HRecCItor			GetEndCIterator() const	{ return m_list.end(); }
 
 	void				AddToCache(HREC hRec)	{ m_cachedHandleList.push_back(hRec); }
 	unsigned			GetCachedHandleCount()	{ return m_cachedHandleList.size(); }
@@ -26,6 +30,7 @@ public:
 protected:
 	TableDesc			m_desc;
 	HRecList			m_cachedHandleList;
+	HRecList			m_list;
 };
 
 #endif // _CCTABLE_H_
