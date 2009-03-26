@@ -16,16 +16,18 @@ public:
 	TableMapper()		{ m_pTable = NULL; m_pShuffler = NULL; }
 	virtual ~TableMapper()	{}
 
-	void			SetTable(const SampleTable* table) { m_pTable = table; }
+	void			SetTable(const CCTable* table)   { m_pTable = table; }
 	void			SetShuffler(TableShuffler* shuffler) { m_pShuffler = shuffler; }
 	void			Map();
 	const unsigned		GetRecCount()			{ return m_map.size(); }
 	const SampleMap&	GetMap()			{ return m_map; }
 
 private:
-	const SampleTable*	m_pTable;
-	SampleMap		m_map;
+	const CCTable*		m_pTable;
 	TableShuffler*		m_pShuffler;
+
+	void			MapItem(const HREC pRec);
+	SampleMap		m_map;
 };
 
 class TableShuffler
@@ -58,6 +60,7 @@ public:
 	void			PrintOutput();
 
 private:
+	void			Count(int number);
 	CountMap		m_countMap;
 };
 #endif // TABLEMAPPER_H_

@@ -2,6 +2,26 @@
 #include <assert.h>
 #include <iostream>
 
+void TableWalker::OnStartElement(const XML_Char *name, const XML_Char **atts)
+{
+	if (curRec) {
+		wcsncpy_s(curField, MAX_XML_TAG_NAME_SIZE, name, MAX_XML_TAG_NAME_SIZE-1);
+		return;
+	}
+	if (!_wcsicmp(recName, name))
+		CreateRecord();
+}
+
+void TableWalker::OnEndElement(const XML_Char *name)
+{
+	if (!_wcsicmp(recName, name)) {
+		AddRecord();
+		return;
+	}
+	if (!_wcsicmp(curField, name))
+		ClearField();
+}
+
 /** \brief Parse XML and fill in the table */
 BOOL TableLoader::Load(ISax2dTable* table)
 {
@@ -9,8 +29,7 @@ BOOL TableLoader::Load(ISax2dTable* table)
 
 	// Check file and record name
 	const TableDesc& desc = table->GetDesc();
-	if (desc.fileName.length() == 0 ||
-		desc.recName.length() == 0)
+	if (desc.fileName.length() == 0 || desc.recName.length() == 0)
 		return FALSE;
 
 	// Open file
@@ -36,36 +55,31 @@ BOOL TableLoader::Load(ISax2dTable* table)
 	XML_SetCharacterDataHandler	(parser, &TableLoader::OnCharacterData);
 	XML_Status status = XML_Parse(parser, m_xml, len, TRUE);
 	if (status != XML_STATUS_OK)
-	{
-		XML_Error error = XML_GetErrorCode(parser);
-		switch (error)
-		{
-		case XML_ERROR_NO_ELEMENTS:
-			return TRUE;
-		// TODO: report error
-		default:
-			return FALSE;
-		}
-	}
+		return HandleLoadingError(XML_GetErrorCode(parser));
 #endif
 	return TRUE;
 }
 
 #ifdef EXPAT
+BOOL TableLoader::HandleLoadingError(XML_Error error)
+{
+	switch (error)
+	{
+	case XML_ERROR_NO_ELEMENTS:
+		return TRUE;
+	default:
+		// TODO: report error
+		return FALSE;
+	}
+	return FALSE;
+}
+
 /** \brief Expat start element handler */
 void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, const XML_Char **atts)
 {
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
-	if (pWalker->curRec == NULL)
-	{
-		if (!_wcsicmp(pWalker->recName, name))
-			pWalker->CreateRecord();
-	}
-	else
-	{
-		wcsncpy_s(pWalker->curField, MAX_XML_TAG_NAME_SIZE, name, MAX_XML_TAG_NAME_SIZE-1);
-	}
+	pWalker->OnStartElement(name, atts);
 #ifdef _DEBUG_MSG
 	std::wcout<<L"OnStartElement: "<<name<<L"\n";
 #endif
@@ -76,13 +90,7 @@ void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 {
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
-	if (pWalker->pTable)
-	{
-		if (!_wcsicmp(pWalker->recName, name))
-			pWalker->AddRecord();
-		if (!_wcsicmp(pWalker->curField, name))
-			pWalker->ClearField();
-	}
+	pWalker->OnEndElement(name);
 #ifdef _DEBUG_MSG
 	std::wcout<<L"OnEndElement:   "<<name<<L"\n";
 #endif

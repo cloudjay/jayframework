@@ -1,29 +1,33 @@
 #include "SampleTable.h"
 #include <wchar.h>
 
+//---------------------------------------
+// SampleItem
+//---------------------------------------
+
+void SampleItem::SetValue(const wstring& field, const wstring& value)
+{
+	const wchar_t* pField = field.c_str();
+	if (!_wcsicmp(pField, L"name")) {
+		name = value;
+		return;
+	}
+	if (!_wcsicmp(pField, L"price")) {
+		wchar_t* pEnd = NULL;
+		price = wcstol(value.c_str(), &pEnd, 10);
+		return;
+	}
+}
+
+//---------------------------------------
+// SampleTable
+//---------------------------------------
+
 HREC SampleTable::CreateRecord()
 {
 	SampleItem *pRec = new SampleItem;
 	AddToCache(pRec);
 	return pRec;
-}
-
-void SampleTable::AddField(HREC hRec, const wstring &fieldName, const wstring &fieldVal)
-{
-	SampleItem* pRec = (SampleItem*)hRec;
-	const wchar_t* pField = fieldName.c_str();
-	if (!_wcsicmp(pField, L"name"))
-		pRec->name = fieldVal;
-	else if (!_wcsicmp(pField, L"price")) {
-		wchar_t* pEnd = NULL;
-		pRec->price = wcstol(fieldVal.c_str(), &pEnd, 10);
-	}
-}
-
-void SampleTable::AddRecord(HREC hRec)
-{
-	m_table.push_back((SampleItem*)hRec);
-	RemoveFromCache(hRec);
 }
 
 void SampleTable::SetFileName(const wchar_t* fileName)
@@ -32,20 +36,11 @@ void SampleTable::SetFileName(const wchar_t* fileName)
 		m_desc.fileName = fileName;
 }
 
-const SampleItem* SampleTable::GetNthItem(const unsigned int n) const
-{
-	if (n<GetRecCount())
-	{
-		return m_table[n];
-	}
-	return NULL;
-}
-
 void SampleTable::Clear()
 {
-	for (SampleItemVecItor it = m_table.begin(); it != m_table.end(); ++it)
+	for (HRecItor it = m_list.begin(); it != m_list.end(); ++it)
 		SAFE_DELETE(*it);
-	m_table.clear();
+	m_list.clear();
 	ClearCache();
 }
 
