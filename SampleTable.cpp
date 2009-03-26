@@ -36,14 +36,6 @@ void SampleTable::SetFileName(const wchar_t* fileName)
 		m_desc.fileName = fileName;
 }
 
-void SampleTable::Clear()
-{
-	for (HRecItor it = m_list.begin(); it != m_list.end(); ++it)
-		SAFE_DELETE(*it);
-	m_list.clear();
-	ClearCache();
-}
-
 #ifdef UNITTEST
 TEST(SampleTable)
 {

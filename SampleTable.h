@@ -34,7 +34,6 @@ public:
 
 private:
 	void			InitDesc() { m_desc.recName = L"item"; }
-	void			Clear();
 };
 
 #endif // _SAMPLETABLE_H_
