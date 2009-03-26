@@ -20,6 +20,14 @@ void CCTable::RemoveFromCache(HREC hRec)
 		m_cachedHandleList.erase(it);
 }
 
+void CCTable::Clear()
+{
+	for (HRecItor it = m_list.begin(); it != m_list.end(); ++it)
+		SAFE_DELETE(*it);
+	m_list.clear();
+	ClearCache();
+}
+
 /** \brief Clear and delete all cached HRECs. */
 void CCTable::ClearCache()
 {

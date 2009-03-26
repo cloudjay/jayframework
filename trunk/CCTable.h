@@ -8,7 +8,7 @@ class CCTable : public ISax2dTable
 {
 public:
 	CCTable()			{}
-	virtual ~CCTable()		{}
+	virtual ~CCTable()		{ Clear(); }
 
 	//---------------------------------------
 	// ISax2dTable
@@ -25,9 +25,11 @@ public:
 	void				AddToCache(HREC hRec)	{ m_cachedHandleList.push_back(hRec); }
 	unsigned			GetCachedHandleCount()	{ return m_cachedHandleList.size(); }
 	void				RemoveFromCache(HREC hRec);
-	void				ClearCache();
 
 protected:
+	void				Clear();
+	void				ClearCache();
+
 	TableDesc			m_desc;
 	HRecList			m_cachedHandleList;
 	HRecList			m_list;
