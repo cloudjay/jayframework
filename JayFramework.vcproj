@@ -62,7 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libexpatw.lib libUnitTest++.lib lua51.lib"
+				AdditionalDependencies="libexpatw.lib libUnitTest++.lib lua51.lib sqlite.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="lib"
 				IgnoreAllDefaultLibraries="false"
@@ -198,6 +198,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SQLiteTable.h"
+				>
+			</File>
+			<File
 				RelativePath=".\TableLoader.h"
 				>
 			</File>
@@ -289,11 +293,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
+					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
 					>
 				</File>
 				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
+					RelativePath=".\UnitTest++\TimeHelpers.h"
 					>
 				</File>
 				<File
@@ -397,6 +401,14 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="SQLite"
+				>
+				<File
+					RelativePath=".\sqlite\sqlite3.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Source Files"
@@ -413,6 +425,10 @@
 			</File>
 			<File
 				RelativePath=".\SampleTable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SQLiteTable.cpp"
 				>
 			</File>
 			<File
