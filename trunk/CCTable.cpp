@@ -1,6 +1,12 @@
 #include "CCTable.h"
 #include <algorithm>
 
+void CCTable::SetFileName(const wchar_t* fileName)
+{
+	if (fileName)
+		m_desc.fileName = fileName;
+}
+
 void CCTable::AddRecord(HREC hRec)
 {
 	m_list.push_back(hRec);

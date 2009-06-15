@@ -10,6 +10,8 @@ public:
 	CCTable()			{}
 	virtual ~CCTable()		{ Clear(); }
 
+	void				SetFileName(const wchar_t* fileName);
+
 	//---------------------------------------
 	// ISax2dTable
 	//---------------------------------------
