@@ -51,10 +51,8 @@ int SQLiteTable::Exec(const char* sql)
 	{
 		sqlite3_close(db);
 		return rc;
-	}
-	
-	char *errMsg	= NULL;
-	rc = sqlite3_exec(db, sql, NULL, NULL, &errMsg);
+	}	
+	rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
 	sqlite3_close(db);
 	return rc;
 }
