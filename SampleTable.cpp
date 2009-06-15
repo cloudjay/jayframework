@@ -30,12 +30,6 @@ HREC SampleTable::CreateRecord()
 	return pRec;
 }
 
-void SampleTable::SetFileName(const wchar_t* fileName)
-{
-	if (fileName)
-		m_desc.fileName = fileName;
-}
-
 #ifdef UNITTEST
 TEST(SampleTable)
 {

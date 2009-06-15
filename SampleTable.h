@@ -13,7 +13,6 @@ public:
 	//---------------------------------------
 	void	SetValue(const wstring& field, const wstring& value);
 
-// private:
 	wstring	name;
 	int	price;
 };
@@ -22,18 +21,13 @@ public:
 class SampleTable : public CCTable, public ITable
 {
 public:
-	SampleTable()		{ InitDesc(); }
-	virtual ~SampleTable()	{ Clear(); }
+	SampleTable()		{ m_desc.recName = L"item"; }
+	virtual ~SampleTable()	{ }
 
 	//---------------------------------------
 	// ISax2dTable
 	//---------------------------------------
 	virtual HREC		CreateRecord();
-
-	void			SetFileName(const wchar_t* fileName);
-
-private:
-	void			InitDesc() { m_desc.recName = L"item"; }
 };
 
 #endif // _SAMPLETABLE_H_
