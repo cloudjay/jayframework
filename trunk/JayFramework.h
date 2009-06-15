@@ -28,4 +28,8 @@
 #define MEMSET_NULL(x) { memset(x, 0x00, sizeof(x)); }
 #endif
 
+#ifdef SQLITE
+	#include "sqlite/sqlite3.h"
+#endif
+
 #endif /* JAYFRAMEWORK_H_ */
