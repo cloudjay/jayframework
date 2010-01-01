@@ -1,4 +1,4 @@
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. -DCYGWIN 
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. 
 
 OBJS =		JayFramework.o CCTable.o SampleTable.o TableLoader.o sqlite/sqlite3.o
 
