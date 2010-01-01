@@ -19,7 +19,7 @@
 
 #endif
 
-#ifdef CYGWIN
+#ifdef __CYGWIN__
 	#define UNITTEST
 	#define SQLITE
 #endif

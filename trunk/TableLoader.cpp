@@ -12,7 +12,7 @@ void TableWalker::OnStartElement(const XML_Char *name, const XML_Char **atts)
 #endif
 		return;
 	}
-#ifdef CYGWIN
+#ifdef __CYGWIN__
 	if (!wcscasecmp(recName, name))
 #else
 	if (!_wcsicmp(recName, name))
@@ -22,7 +22,7 @@ void TableWalker::OnStartElement(const XML_Char *name, const XML_Char **atts)
 
 void TableWalker::OnEndElement(const XML_Char *name)
 {
-#ifdef CYGWIN
+#ifdef __CYGWIN__
 	if (!wcscasecmp(recName, name)) {
 #else
 	if (!_wcsicmp(recName, name)) {
@@ -31,7 +31,7 @@ void TableWalker::OnEndElement(const XML_Char *name)
 		return;
 	}
 
-#ifdef CYGWIN
+#ifdef __CYGWIN__
 	if (!wcscasecmp(curField, name))
 #else
 	if (!_wcsicmp(curField, name))
@@ -53,7 +53,7 @@ BOOL TableLoader::Load(ISax2dTable* table)
 	FILE*	pFile = NULL;
 #ifdef __STDC_WANT_SECURE_LIB__
 	errno_t	err = _wfopen_s(&pFile, desc.fileName.c_str(), L"r");
-#elif defined(CYGWIN)
+#elif defined(__CYGWIN__)
 	char fileName[128] = {0,};
 	wcstombs(fileName, desc.fileName.c_str(), desc.fileName.size());
 	pFile = fopen(fileName, "r");
