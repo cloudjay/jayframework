@@ -29,7 +29,7 @@ struct SampleFixture
 
 	SampleFixture() {
 		sampleFile = NULL;
-#ifdef WIN32
+#ifdef  __STDC_WANT_SECURE_LIB__
 		fopen_s(&sampleFile, "Sample.xml", "r");
 #else
 		sampleFile = fopen("Sample.xml", "r");

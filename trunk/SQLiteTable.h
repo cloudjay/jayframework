@@ -12,11 +12,11 @@ public:
 	//---------------------------------------
 	virtual HREC		CreateRecord();
 
-	int			Exec(const char* sql);
+	int					Exec(const char* sql);
 private:
-	int			ClearTable();
+	int					ClearTable();
 
-	string			m_dbName;
+	string				m_dbName;
 	unsigned short		m_newIndex;
 };
 
@@ -30,7 +30,7 @@ public:
 	//---------------------------------------
 	// IRec
 	//---------------------------------------
-	void	SetValue(const wstring& field, const wstring& value);
+	int		SetValue(const wstring& field, const wstring& value);
 
 private:
 	unsigned short		m_index;

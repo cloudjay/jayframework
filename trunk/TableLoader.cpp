@@ -5,20 +5,37 @@
 void TableWalker::OnStartElement(const XML_Char *name, const XML_Char **atts)
 {
 	if (curRec) {
+#ifdef __STDC_WANT_SECURE_LIB__
 		wcsncpy_s(curField, MAX_XML_TAG_NAME_SIZE, name, MAX_XML_TAG_NAME_SIZE-1);
+#else
+		wcsncpy(curField, name, MAX_XML_TAG_NAME_SIZE-1);
+#endif
 		return;
 	}
+#ifdef CYGWIN
+	if (!wcscasecmp(recName, name))
+#else
 	if (!_wcsicmp(recName, name))
+#endif
 		CreateRecord();
 }
 
 void TableWalker::OnEndElement(const XML_Char *name)
 {
+#ifdef CYGWIN
+	if (!wcscasecmp(recName, name)) {
+#else
 	if (!_wcsicmp(recName, name)) {
+#endif
 		AddRecord();
 		return;
 	}
+
+#ifdef CYGWIN
+	if (!wcscasecmp(curField, name))
+#else
 	if (!_wcsicmp(curField, name))
+#endif
 		ClearField();
 }
 
@@ -34,7 +51,13 @@ BOOL TableLoader::Load(ISax2dTable* table)
 
 	// Open file
 	FILE*	pFile = NULL;
+#ifdef __STDC_WANT_SECURE_LIB__
 	errno_t	err = _wfopen_s(&pFile, desc.fileName.c_str(), L"r");
+#elif defined(CYGWIN)
+	char fileName[128] = {0,};
+	wcstombs(fileName, desc.fileName.c_str(), desc.fileName.size());
+	pFile = fopen(fileName, "r");
+#endif
 	if (pFile == NULL)
 		return FALSE;
 	int len = fread(m_xml, sizeof(char), sizeof(m_xml), pFile);
@@ -43,7 +66,12 @@ BOOL TableLoader::Load(ISax2dTable* table)
 
 	// Init table walker
 	m_walker.pTable = table;
+
+#ifdef __STDC_WANT_SECURE_LIB__
 	wcsncpy_s(m_walker.recName, MAX_XML_TAG_NAME_SIZE, desc.recName.c_str(), desc.recName.length());
+#else
+	wcsncpy(m_walker.recName, desc.recName.c_str(), desc.recName.length());
+#endif
 	m_walker.curRec = NULL;
 	m_walker.ClearField();
 

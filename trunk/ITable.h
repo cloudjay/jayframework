@@ -8,10 +8,10 @@ using namespace std;
 
 class IRec {
 public:
-	virtual void		SetValue(const wstring& field, const wstring& value) = 0;
+	virtual int		SetValue(const wstring& field, const wstring& value) = 0;
 };
 
-typedef IRec*			HREC;
+typedef IRec*				HREC;
 typedef vector<HREC>		HRecList;
 typedef HRecList::iterator	HRecItor;
 typedef HRecList::const_iterator HRecCItor;
