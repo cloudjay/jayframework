@@ -11,7 +11,7 @@ public:
 	//---------------------------------------
 	// IRec
 	//---------------------------------------
-	void	SetValue(const wstring& field, const wstring& value);
+	int		SetValue(const wstring& field, const wstring& value);
 
 	wstring	name;
 	int	price;

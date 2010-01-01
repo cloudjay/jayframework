@@ -67,7 +67,7 @@ int SQLiteTable::ClearTable()
 //---------------------------------------
 
 #define MAX_FIELD_LEN	128
-void SQLiteItem::SetValue(const wstring& field, const wstring& value)
+int SQLiteItem::SetValue(const wstring& field, const wstring& value)
 {
 #ifdef WIN32
 	char fieldStr[MAX_FIELD_LEN] = {0,};
@@ -78,7 +78,7 @@ void SQLiteItem::SetValue(const wstring& field, const wstring& value)
 
 	char sql[SQL_LEN] = {0,};
 	sprintf_s(sql, SQL_LEN, UPDATE_RECORD, fieldStr, valueStr, m_index);
-	m_pTable->Exec(sql);
+	return m_pTable->Exec(sql);
 #else
 	// how to convert wstring to UTF-8 ???
 #endif
@@ -106,6 +106,8 @@ TEST(LoadSqliteTable)
 	SQLiteTable	table;
 	table.SetFileName(L"Sample.xml");
 	CHECK(loader.Load(&table));
+#ifdef EXPAT
 	CHECK_EQUAL(2, table.GetRecCount());
+#endif
 }
 #endif

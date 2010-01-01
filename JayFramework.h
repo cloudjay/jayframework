@@ -11,7 +11,7 @@
 #endif
 
 #ifdef UNITTEST
-	#include "UnitTest++/UnitTest++.h"
+	#include "UnitTest++/src/UnitTest++.h"
 	/** \brief Simple test runner */
 	int RunTests();
 #endif

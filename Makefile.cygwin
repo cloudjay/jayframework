@@ -1,0 +1,15 @@
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. -DCYGWIN 
+
+OBJS =		JayFramework.o CCTable.o SampleTable.o TableLoader.o sqlite/sqlite3.o
+
+LIBS =		UnitTest++/libUnitTest++.a
+
+TARGET =	JayFramework.exe
+
+$(TARGET):	$(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
+
+all:	$(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)

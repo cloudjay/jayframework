@@ -15,7 +15,7 @@ public:
 	void		OnEndElement	(const XML_Char *name);
 
 	void		CreateRecord()	{ if (pTable) curRec = pTable->CreateRecord(); }
-	void		AddRecord()	{ if (pTable) pTable->AddRecord(curRec); curRec = NULL; }
+	void		AddRecord()		{ if (pTable) pTable->AddRecord(curRec); curRec = NULL; }
 	void		ClearField()	{ MEMSET_NULL(curField); }
 	BOOL		HasCurField()	{ return (pTable && curRec && curField && wcslen(curField)); }
 	void		AddField(wchar_t* contents)  { if (pTable) pTable->AddField(curRec, wstring(curField), wstring(contents)); }

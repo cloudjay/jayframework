@@ -62,7 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libexpatw.lib libUnitTest++.lib lua51.lib sqlite.lib"
+				AdditionalDependencies="libexpatw.lib lib\UnitTest++.vsnet2005.lib lua51.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="lib"
 				IgnoreAllDefaultLibraries="false"
@@ -93,7 +93,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="doxygen&#x0D;&#x0A;$(OutDir)\$(ProjectName).exe&#x0D;&#x0A;"
+				CommandLine="rem doxygen&#x0D;&#x0A;$(OutDir)\$(ProjectName).exe&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration
@@ -218,98 +218,6 @@
 				>
 			</File>
 			<Filter
-				Name="UnitTest++"
-				>
-				<File
-					RelativePath=".\UnitTest++\AssertException.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\CheckMacros.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\Checks.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\Config.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\DeferredTestReporter.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\DeferredTestResult.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\MemoryOutStream.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\ReportAssert.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\Test.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestDetails.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestList.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestMacros.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestReporter.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestReporterStdout.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestResults.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestRunner.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TestSuite.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TimeConstraint.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\Win32\TimeHelpers.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\TimeHelpers.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\UnitTest++.h"
-					>
-				</File>
-				<File
-					RelativePath=".\UnitTest++\XmlTestReporter.h"
-					>
-				</File>
-			</Filter>
-			<Filter
 				Name="expat"
 				>
 				<File
@@ -404,6 +312,10 @@
 			<Filter
 				Name="SQLite"
 				>
+				<File
+					RelativePath=".\sqlite\sqlite3.c"
+					>
+				</File>
 				<File
 					RelativePath=".\sqlite\sqlite3.h"
 					>
