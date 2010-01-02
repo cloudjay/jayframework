@@ -8,7 +8,7 @@
 int SampleItem::SetValue(const wstring& field, const wstring& value)
 {
 	const wchar_t* pField = field.c_str();
-#ifdef __CYGWIN__
+#ifdef __STDC__
 	if (!wcscasecmp(pField, L"name")) {
 #else
 	if (!_wcsicmp(pField, L"name")) {
@@ -16,7 +16,7 @@ int SampleItem::SetValue(const wstring& field, const wstring& value)
 		name = value;
 		return 0;
 	}
-#ifdef __CYGWIN__
+#ifdef __STDC__
 	if (!wcscasecmp(pField, L"name")) {
 #else
 	if (!_wcsicmp(pField, L"price")) {

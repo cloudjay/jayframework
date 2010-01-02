@@ -7,7 +7,7 @@
 #ifdef EXPAT
 	/** \brief XML Document encoding is UTF-16 */
 	#define  XML_UNICODE_WCHAR_T
-	#include "expat/expat.h"
+	#include "expat/lib/expat.h"
 #endif
 
 #ifdef UNITTEST
