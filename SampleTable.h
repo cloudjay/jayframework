@@ -21,7 +21,7 @@ public:
 class SampleTable : public CCTable, public ITable
 {
 public:
-	SampleTable()		{ m_desc.recName = L"item"; }
+	SampleTable()			{ m_desc.recName = L"item"; }
 	virtual ~SampleTable()	{ }
 
 	//---------------------------------------

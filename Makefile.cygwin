@@ -1,8 +1,8 @@
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. 
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -I. -D_DEBUG_MSG 
 
 OBJS =		JayFramework.o CCTable.o SampleTable.o TableLoader.o sqlite/sqlite3.o
 
-LIBS =		UnitTest++/libUnitTest++.a
+LIBS =		UnitTest++/libUnitTest++.a Expat/.libs/libexpat.a
 
 TARGET =	JayFramework.exe
 

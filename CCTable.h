@@ -8,7 +8,7 @@ class CCTable : public ISax2dTable
 {
 public:
 	CCTable()			{}
-	virtual ~CCTable()		{ Clear(); }
+	virtual ~CCTable()	{ Clear(); }
 
 	void				SetFileName(const wchar_t* fileName);
 
@@ -16,11 +16,11 @@ public:
 	// ISax2dTable
 	//---------------------------------------
 	virtual const TableDesc&	GetDesc()		{ return m_desc; }
-	virtual HREC			CreateRecord()		{ return NULL; }
-	virtual void			AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal);
-	virtual void			AddRecord(HREC hRec);
+	virtual HREC		CreateRecord()			{ return NULL; }
+	virtual void		AddField(HREC hRec, const wstring& fieldName, const wstring& fieldVal);
+	virtual void		AddRecord(HREC hRec);
 
-	const unsigned			GetRecCount() const	{ return m_list.size(); }
+	const unsigned		GetRecCount() const		{ return m_list.size(); }
 	HRecCItor			GetBeginCIterator() const { return m_list.begin(); }
 	HRecCItor			GetEndCIterator() const	{ return m_list.end(); }
 
