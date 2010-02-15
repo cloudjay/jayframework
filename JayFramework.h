@@ -5,13 +5,11 @@
 #include "typedef.h"
 
 #ifdef EXPAT
-	/** \brief XML Document encoding is UTF-16 */
-	#define  XML_UNICODE_WCHAR_T
-	#include "expat/lib/expat.h"
+	#include "expat/expat.h"
 #endif
 
 #ifdef UNITTEST
-	#include "UnitTest++/src/UnitTest++.h"
+	#include "UnitTest++/UnitTest++.h"
 	/** \brief Simple test runner */
 	int RunTests();
 #endif

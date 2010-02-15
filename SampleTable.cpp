@@ -59,14 +59,14 @@ TEST(LoadSampleTable)
 	TableLoader	loader;
 	SampleTable	table;
 	table.SetFileName(L"Sample.xml");
-	CHECK(loader.Load(&table));
 #ifdef EXPAT
+	CHECK(loader.Load(&table));
 	CHECK_EQUAL(2, table.GetRecCount());
 #endif
 	SampleTable	table2;
 	table2.SetFileName(L"Sample2.xml");
-	CHECK(loader.Load(&table2));
 #ifdef EXPAT
+	CHECK(loader.Load(&table2));
 	CHECK_EQUAL(2, table2.GetRecCount());
 #endif
 }

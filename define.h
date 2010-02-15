@@ -3,10 +3,13 @@
 */
 
 /** \brief Lua */
-//#define LUA
+#define LUA
 
 /** \brief EXPAT SAX XML Parser */
 #define EXPAT
+#ifdef  EXPAT
+#define XML_STATIC
+#endif
 
 /** \brief UnitTest++ */
 #define UNITTEST
