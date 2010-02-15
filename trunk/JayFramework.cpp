@@ -49,12 +49,20 @@ TEST_FIXTURE(SampleFixture, ParserCreate)
 
 TEST_FIXTURE(SampleFixture, SampleFileExist)
 {
-	int len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
-	CHECK(len > 0);
+	CHECK(sampleFile);
+	if (sampleFile)
+	{
+		int len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
+		CHECK(len > 0);
+	}
 }
 
 TEST_FIXTURE(SampleFixture, ParseSample)
 {
+	CHECK(sampleFile);
+	if (sampleFile == NULL)
+		return;
+
 	// Init
 	int len = fread(xml, sizeof(char), sizeof(xml), sampleFile);
 	XML_Parser parser = XML_ParserCreate(XML_INPUT_INCODING);

@@ -23,11 +23,6 @@ void TableMapper::MapItem(const HREC pRec)
 	if (pSample == NULL)
 		return;
 	m_map.insert(std::make_pair(pSample->price, pSample->name));
-#ifdef _DEBUG_MSG
-	wchar_t buf[1024] = {0,};
-	swprintf_s(buf, L"Insert to map: %d:%s\n", pSample->price, pSample->name.c_str());
-	std::wcout<<buf;
-#endif
 }
 
 void TableShuffler::Shuffle(const SampleMap* map)
@@ -106,9 +101,6 @@ TEST_FIXTURE(SampleMapper, MapShuffleReduce)
 		Sleep(1000);
 	TableReducer	reducer;
 	reducer.Reduce(shuffler.GetMap());
-#ifdef _DEBUG_MSG
-	reducer.PrintOutput();
-#endif
 }
 
 }

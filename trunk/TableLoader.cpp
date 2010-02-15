@@ -76,12 +76,6 @@ BOOL TableLoader::Load(ISax2dTable* table)
 	m_walker.curRec = NULL;
 	m_walker.ClearField();
 
-#ifdef _DEBUG_MSG
-#ifdef __STDC__
-	printf("Parse start: %s\n", fileName);
-#endif
-#endif
-
 #ifdef EXPAT
 	// Parse by Expat
 	XML_Parser			parser	= XML_ParserCreate(XML_INPUT_INCODING);
@@ -91,10 +85,6 @@ BOOL TableLoader::Load(ISax2dTable* table)
 	XML_Status status = XML_Parse(parser, m_xml, len, TRUE);
 	if (status != XML_STATUS_OK)
 		return HandleLoadingError(XML_GetErrorCode(parser));
-#endif
-
-#ifdef _DEBUG_MSG
-	printf("Parse end\n");
 #endif
 	return TRUE;
 }
@@ -127,9 +117,6 @@ void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, c
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
 	pWalker->OnStartElement(name, atts);
-#ifdef _DEBUG_MSG
-	//std::wcout<<L"OnStartElement: "<<name<<L"\n";
-#endif
 }
 
 /** \brief Expat end element handler */
@@ -138,9 +125,6 @@ void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
 	pWalker->OnEndElement(name);
-#ifdef _DEBUG_MSG
-	//std::wcout<<L"OnEndElement:   "<<name<<L"\n";
-#endif
 }
 
 /** \brief Expat CDATA handler */
@@ -157,9 +141,6 @@ void XMLCALL TableLoader::OnCharacterData(void *userData, const XML_Char *s, int
 		wcsncpy(buf, s, len);
 #endif
 		pWalker->AddField(buf);
-#ifdef _DEBUG_MSG
-		//std::wcout<<L"OnCDATA: "<<buf<<L"\n";
-#endif
 	}
 }
 #endif // EXPAT
