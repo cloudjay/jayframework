@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <iostream>
 
+#ifdef EXPAT
 void TableWalker::OnStartElement(const XML_Char *name, const XML_Char **atts)
 {
 	if (curRec) {
@@ -38,6 +39,7 @@ void TableWalker::OnEndElement(const XML_Char *name)
 #endif
 		ClearField();
 }
+#endif // EXPAT
 
 /** \brief Parse XML and fill in the table */
 BOOL TableLoader::Load(ISax2dTable* table)
