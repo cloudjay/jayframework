@@ -11,8 +11,10 @@ public:
 	HREC		curRec;
 	wchar_t		curField[MAX_XML_TAG_NAME_SIZE];
 
+#ifdef EXPAT
 	void		OnStartElement  (const XML_Char *name, const XML_Char **atts);
 	void		OnEndElement	(const XML_Char *name);
+#endif
 
 	void		CreateRecord()	{ if (pTable) curRec = pTable->CreateRecord(); }
 	void		AddRecord()		{ if (pTable) pTable->AddRecord(curRec); curRec = NULL; }

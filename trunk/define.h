@@ -6,7 +6,9 @@
 #define LUA
 
 /** \brief EXPAT SAX XML Parser */
+#ifndef __CYGWIN
 #define EXPAT
+#endif
 #ifdef  EXPAT
 #define XML_STATIC
 #endif
