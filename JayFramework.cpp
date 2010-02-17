@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "JayFramework.h"
+#ifdef EXPAT
 #include "XML.h"
+#endif
 
 int main(void) {
 #ifdef UNITTEST
