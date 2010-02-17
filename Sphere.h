@@ -12,10 +12,15 @@ public:
 	---------------------------*/
 	virtual Aabbf		CalcAABB();
 
-	void				SetR(float r);
-	float				GetR();
+	void				SetPos(Vector3f pos);
+	Vector3f			GetPos() const;
+	void				SetR(float r)			{ cnr.radius = r; }
+	float				GetR() const			{ return cnr.radius; }
+#ifdef USE_INTRIN
+	__declspec(align(16))
+#endif
+	Vector4f			cnr;	// center and radius
 
-private:
-	Vector3f			center;
-	float				r;
+	BOOL				DoesCollide(const Sphere& other);
+
 };
