@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="."
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;COMPILED_FROM_DSP;XML_UNICODE_WCHAR_T"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -186,6 +186,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Geometry.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ITable.h"
 				>
 			</File>
@@ -194,7 +198,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Physic.h"
+				>
+			</File>
+			<File
+				RelativePath=".\PhysicalEntity.h"
+				>
+			</File>
+			<File
+				RelativePath=".\PhysicalWorld.h"
+				>
+			</File>
+			<File
 				RelativePath=".\SampleTable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Sphere.h"
 				>
 			</File>
 			<File
@@ -232,7 +252,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\PhysicalEntity.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PhysicalWorld.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SampleTable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Sphere.cpp"
 				>
 			</File>
 			<File
@@ -735,6 +767,154 @@
 					>
 				</File>
 			</Filter>
+		</Filter>
+		<Filter
+			Name="vmmlib"
+			>
+			<File
+				RelativePath=".\vmmlib\axisAlignedBoundingBox.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\details.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\exception.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\frustum.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\frustum.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\frustumCuller.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\frustumCuller.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\helperFunctions.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\jacobiSolver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\jacobiSolver.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\lapack.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\lapack_includes.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\lapack_linear_least_squares.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\lapack_svd.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\lapack_types.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\linear_least_squares.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\matrix.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\matrix3.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\matrix4.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\matrix_functors.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\qr_decomposition.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\quaternion.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\quaternion.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\stringUtils.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\stringUtils.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\svd.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\svd.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vector.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vector2.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vector3.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vector4.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\visibility.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\visibility.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vmmlib.h"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vmmlib.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\vmmlib\vmmlib_config.hpp"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath=".\Sample.lua"
