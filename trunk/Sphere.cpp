@@ -2,32 +2,42 @@
 
 Sphere::Sphere(void)
 {
-}
-
-Sphere::~Sphere(void)
-{
+	cnr = Vector4f.ZERO;
 }
 
 Aabbf Sphere::CalcAABB()
 {
-	float r = cnr.radius;
-	Vector3f vecR(r, r, r);
-	Vector3f center(cnr.center.x, cnr.center.y, cnr.center.z);
-	return Aabbf(center-vecR, center+vecR);
+#ifdef USE_INTRIN
+	__declspec(align(16)) Vector4f vecMin, vecMax;
+	__m128 vecR = _mm_set1_ps(cnr.radius);						// vecR = { r, r, r, r }
+	__m128 vecC = _mm_load_ps((float*)cnr.xyzw);				// vecC = { x, y, z, r }
+	_mm_store_ps((float*)vecMin.xyzw, _mm_sub_ps(vecC, vecR));	// vecMin = vecC - vecR
+	_mm_store_ps((float*)vecMax.xyzw, _mm_add_ps(vecC, vecR));	// vecMax = vecC + vecR
+	return Aabbf(vecMin.getSphereCenter(), vecMax.getSphereCenter());
+#else
+	return Aabbf(cnr);
+#endif
 }
 
-void Sphere::SetPos(Vector3f pos)
+#ifdef UNITTEST
+TEST(SphereCalcAABB)
 {
-	cnr.center.x = pos.x;
-	cnr.center.y = pos.y;
-	cnr.center.z = pos.z;
+	Sphere s1;
+	s1.SetPos(Vector3f(1.f, 1.f, 1.f));
+	s1.SetR(1.f);
+	Aabbf aabb = s1.CalcAABB();
+	Vector3f min = aabb.getMin();
+	Vector3f max = aabb.getMax();
+	CHECK_EQUAL(0.f, min.x);
+	CHECK_EQUAL(0.f, min.y);
+	CHECK_EQUAL(0.f, min.z);
+	CHECK_EQUAL(2.f, max.x);
+	CHECK_EQUAL(2.f, max.y);
+	CHECK_EQUAL(2.f, max.z);
 }
+#endif
 
-Vector3f Sphere::GetPos() const
-{
-	return Vector3f(cnr.center.x, cnr.center.y, cnr.center.z);
-}
-
+/// http://download.intel.com/technology/itj/2008/v12i3/paper2.pdf
 BOOL Sphere::DoesCollide(const Sphere &other)
 {
 #ifdef USE_INTRIN
@@ -60,7 +70,7 @@ BOOL Sphere::DoesCollide(const Sphere &other)
 }
 
 #ifdef UNITTEST
-TEST(Sphere)
+TEST(SphereDoesCollide)
 {
 	Sphere s1, s2;
 	s1.SetPos(Vector3f(0.f, 0.f, 0.f));
