@@ -69,9 +69,9 @@ AxisAlignedBoundingBox< T >::AxisAlignedBoundingBox( const Vector4< T >& sphere 
     : _dirty( false )
     , _empty( false )
 {
-    _max = _min = sphere.getCenter();
-    _max += sphere.getRadius();
-    _min -= sphere.getRadius();
+    _max = _min = sphere.getSphereCenter();
+    _max += sphere.radius;
+    _min -= sphere.radius;
 }
 
 

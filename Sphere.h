@@ -5,22 +5,23 @@ class Sphere : public IGeometry
 {
 public:
 	Sphere(void);
-	virtual ~Sphere(void);
+	virtual ~Sphere(void) {}
 
-	/*-------------------------
-		IGeometry	
-	---------------------------*/
-	virtual Aabbf		CalcAABB();
-
-	void				SetPos(Vector3f pos);
-	Vector3f			GetPos() const;
-	void				SetR(float r)			{ cnr.radius = r; }
-	float				GetR() const			{ return cnr.radius; }
+private:
 #ifdef USE_INTRIN
 	__declspec(align(16))
 #endif
 	Vector4f			cnr;	// center and radius
 
-	BOOL				DoesCollide(const Sphere& other);
+public:
+	/*-------------------------
+		IGeometry	
+	---------------------------*/
+	virtual Aabbf		CalcAABB();
 
+	BOOL				DoesCollide(const Sphere& other);
+	void				SetPos(Vector3f pos)	{ cnr.set(pos, cnr.radius); }
+	Vector3f			GetPos() const			{ return cnr.getSphereCenter(); }
+	void				SetR(float r)			{ cnr.radius = r; }
+	float				GetR() const			{ return cnr.radius; }
 };

@@ -278,7 +278,7 @@ Vector3< T >::Vector3( const T  i, const T  j, const T  k )
 template < typename T > 
 Vector3< T >::Vector3( const Vector4<T>& from )
 {
-    const T wInv = 1./from.w;
+    const T wInv = 1.f/from.w;
     x = from.x * wInv;
     y = from.y * wInv;
     z = from.z * wInv;

@@ -48,6 +48,7 @@
 				DisableLanguageExtensions="false"
 				OpenMP="false"
 				UsePrecompiledHeader="0"
+				AssemblerOutput="4"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
@@ -916,18 +917,22 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\Sample.lua"
+		<Filter
+			Name="Data Files"
 			>
-		</File>
-		<File
-			RelativePath=".\Sample.xml"
-			>
-		</File>
-		<File
-			RelativePath=".\Sample2.xml"
-			>
-		</File>
+			<File
+				RelativePath=".\Sample.lua"
+				>
+			</File>
+			<File
+				RelativePath=".\Sample.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\Sample2.xml"
+				>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>
