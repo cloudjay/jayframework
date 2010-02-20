@@ -8,10 +8,7 @@ public:
 	virtual ~Sphere(void) {}
 
 private:
-#ifdef USE_INTRIN
-	__declspec(align(16))
-#endif
-	Vector4f			cnr;	// center and radius
+	ALIGN16 Vector4f	attr;	// center and radius
 
 public:
 	/*-------------------------
@@ -20,8 +17,8 @@ public:
 	virtual Aabbf		CalcAABB();
 
 	BOOL				DoesCollide(const Sphere& other);
-	void				SetPos(Vector3f pos)	{ cnr.set(pos, cnr.radius); }
-	Vector3f			GetPos() const			{ return cnr.getSphereCenter(); }
-	void				SetR(float r)			{ cnr.radius = r; }
-	float				GetR() const			{ return cnr.radius; }
+	void				SetPos(Vector3f pos)	{ attr.set(pos, attr.radius); }
+	Vector3f			GetPos() const			{ return attr.getSphereCenter(); }
+	void				SetR(float r)			{ attr.radius = r; }
+	float				GetR() const			{ return attr.radius; }
 };

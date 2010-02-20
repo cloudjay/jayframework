@@ -10,4 +10,11 @@
 #define USE_INTRIN
 #endif
 
+#ifdef USE_INTRIN
+#define ALIGN16	__declspec(align(16))
+#else
+#define ALIGN16	
+#endif
+
+
 using namespace vmml;

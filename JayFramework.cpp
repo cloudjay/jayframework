@@ -12,7 +12,7 @@ int main(void) {
 
 #ifdef UNITTEST
 /**	\brief Runs all unit tests. */
-int RunTests()
+EXPORT int RunTests()
 {
 	puts("Unit testing...");
 	return UnitTest::RunAllTests();

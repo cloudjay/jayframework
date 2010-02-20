@@ -11,7 +11,7 @@
 #ifdef UNITTEST
 	#include "UnitTest++/UnitTest++.h"
 	/** \brief Simple test runner */
-	int RunTests();
+	EXPORT int RunTests();
 #endif
 
 #ifdef LUA
