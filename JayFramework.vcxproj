@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD1106A0-31CA-43E8-BC05-068F982E5BF5}</ProjectGuid>
+    <RootNamespace>JayFramework</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30128.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Output\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Output\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;DLLEXPORT;_DEBUG;_CRT_SECURE_NO_WARNINGS;COMPILED_FROM_DSP;XML_UNICODE_WCHAR_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CCTable.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="ITable.h" />
+    <ClInclude Include="JayFramework.h" />
+    <ClInclude Include="Physic.h" />
+    <ClInclude Include="PhysicalEntity.h" />
+    <ClInclude Include="PhysicalWorld.h" />
+    <ClInclude Include="PointMass.h" />
+    <ClInclude Include="SampleTable.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SQLiteTable.h" />
+    <ClInclude Include="TableLoader.h" />
+    <ClInclude Include="TableMapper.h" />
+    <ClInclude Include="typedef.h" />
+    <ClInclude Include="XML.h" />
+    <ClInclude Include="lua\lapi.h" />
+    <ClInclude Include="lua\lauxlib.h" />
+    <ClInclude Include="lua\lcode.h" />
+    <ClInclude Include="lua\ldebug.h" />
+    <ClInclude Include="lua\ldo.h" />
+    <ClInclude Include="lua\lfunc.h" />
+    <ClInclude Include="lua\lgc.h" />
+    <ClInclude Include="lua\llex.h" />
+    <ClInclude Include="lua\llimits.h" />
+    <ClInclude Include="lua\lmem.h" />
+    <ClInclude Include="lua\lobject.h" />
+    <ClInclude Include="lua\lopcodes.h" />
+    <ClInclude Include="lua\lparser.h" />
+    <ClInclude Include="lua\lstate.h" />
+    <ClInclude Include="lua\lstring.h" />
+    <ClInclude Include="lua\ltable.h" />
+    <ClInclude Include="lua\ltm.h" />
+    <ClInclude Include="lua\lua.h" />
+    <ClInclude Include="lua\lua.hpp" />
+    <ClInclude Include="lua\luaconf.h" />
+    <ClInclude Include="lua\lualib.h" />
+    <ClInclude Include="lua\lundump.h" />
+    <ClInclude Include="lua\lvm.h" />
+    <ClInclude Include="lua\lzio.h" />
+    <ClInclude Include="sqlite\sqlite3.h" />
+    <ClInclude Include="expat\amigaconfig.h" />
+    <ClInclude Include="expat\ascii.h" />
+    <ClInclude Include="expat\asciitab.h" />
+    <ClInclude Include="expat\expat.h" />
+    <ClInclude Include="expat\expat_external.h" />
+    <ClInclude Include="expat\iasciitab.h" />
+    <ClInclude Include="expat\internal.h" />
+    <ClInclude Include="expat\latin1tab.h" />
+    <ClInclude Include="expat\macconfig.h" />
+    <ClInclude Include="expat\nametab.h" />
+    <ClInclude Include="expat\utf8tab.h" />
+    <ClInclude Include="expat\winconfig.h" />
+    <ClInclude Include="expat\xmlrole.h" />
+    <ClInclude Include="expat\xmltok.h" />
+    <ClInclude Include="expat\xmltok_impl.h" />
+    <ClInclude Include="UnitTest++\AssertException.h" />
+    <ClInclude Include="UnitTest++\CheckMacros.h" />
+    <ClInclude Include="UnitTest++\Checks.h" />
+    <ClInclude Include="UnitTest++\Config.h" />
+    <ClInclude Include="UnitTest++\CurrentTest.h" />
+    <ClInclude Include="UnitTest++\DeferredTestReporter.h" />
+    <ClInclude Include="UnitTest++\DeferredTestResult.h" />
+    <ClInclude Include="UnitTest++\ExecuteTest.h" />
+    <ClInclude Include="UnitTest++\MemoryOutStream.h" />
+    <ClInclude Include="UnitTest++\ReportAssert.h" />
+    <ClInclude Include="UnitTest++\Test.h" />
+    <ClInclude Include="UnitTest++\TestDetails.h" />
+    <ClInclude Include="UnitTest++\TestList.h" />
+    <ClInclude Include="UnitTest++\TestMacros.h" />
+    <ClInclude Include="UnitTest++\TestReporter.h" />
+    <ClInclude Include="UnitTest++\TestReporterStdout.h" />
+    <ClInclude Include="UnitTest++\TestResults.h" />
+    <ClInclude Include="UnitTest++\TestRunner.h" />
+    <ClInclude Include="UnitTest++\TestSuite.h" />
+    <ClInclude Include="UnitTest++\TimeConstraint.h" />
+    <ClInclude Include="UnitTest++\TimeHelpers.h" />
+    <ClInclude Include="UnitTest++\UnitTest++.h" />
+    <ClInclude Include="UnitTest++\XmlTestReporter.h" />
+    <ClInclude Include="UnitTest++\Win32\TimeHelpers.h" />
+    <ClInclude Include="vmmlib\axisAlignedBoundingBox.h" />
+    <ClInclude Include="vmmlib\details.hpp" />
+    <ClInclude Include="vmmlib\exception.hpp" />
+    <ClInclude Include="vmmlib\frustum.h" />
+    <ClInclude Include="vmmlib\frustum.hpp" />
+    <ClInclude Include="vmmlib\frustumCuller.h" />
+    <ClInclude Include="vmmlib\frustumCuller.hpp" />
+    <ClInclude Include="vmmlib\helperFunctions.h" />
+    <ClInclude Include="vmmlib\jacobiSolver.h" />
+    <ClInclude Include="vmmlib\jacobiSolver.hpp" />
+    <ClInclude Include="vmmlib\lapack.hpp" />
+    <ClInclude Include="vmmlib\lapack_includes.hpp" />
+    <ClInclude Include="vmmlib\lapack_linear_least_squares.hpp" />
+    <ClInclude Include="vmmlib\lapack_svd.hpp" />
+    <ClInclude Include="vmmlib\lapack_types.hpp" />
+    <ClInclude Include="vmmlib\linear_least_squares.hpp" />
+    <ClInclude Include="vmmlib\matrix.hpp" />
+    <ClInclude Include="vmmlib\matrix3.h" />
+    <ClInclude Include="vmmlib\matrix4.h" />
+    <ClInclude Include="vmmlib\matrix_functors.hpp" />
+    <ClInclude Include="vmmlib\qr_decomposition.hpp" />
+    <ClInclude Include="vmmlib\quaternion.h" />
+    <ClInclude Include="vmmlib\quaternion.hpp" />
+    <ClInclude Include="vmmlib\stringUtils.h" />
+    <ClInclude Include="vmmlib\stringUtils.hpp" />
+    <ClInclude Include="vmmlib\svd.h" />
+    <ClInclude Include="vmmlib\svd.hpp" />
+    <ClInclude Include="vmmlib\vector.hpp" />
+    <ClInclude Include="vmmlib\vector2.h" />
+    <ClInclude Include="vmmlib\vector3.h" />
+    <ClInclude Include="vmmlib\vector4.h" />
+    <ClInclude Include="vmmlib\visibility.h" />
+    <ClInclude Include="vmmlib\visibility.hpp" />
+    <ClInclude Include="vmmlib\vmmlib.h" />
+    <ClInclude Include="vmmlib\vmmlib.hpp" />
+    <ClInclude Include="vmmlib\vmmlib_config.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CCTable.cpp" />
+    <ClCompile Include="JayFramework.cpp" />
+    <ClCompile Include="PhysicalEntity.cpp" />
+    <ClCompile Include="PhysicalWorld.cpp" />
+    <ClCompile Include="PointMass.cpp" />
+    <ClCompile Include="SampleTable.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SQLiteTable.cpp" />
+    <ClCompile Include="TableLoader.cpp" />
+    <ClCompile Include="TableMapper.cpp" />
+    <ClCompile Include="lua\lapi.c" />
+    <ClCompile Include="lua\lauxlib.c" />
+    <ClCompile Include="lua\lbaselib.c" />
+    <ClCompile Include="lua\lcode.c" />
+    <ClCompile Include="lua\ldblib.c" />
+    <ClCompile Include="lua\ldebug.c" />
+    <ClCompile Include="lua\ldo.c" />
+    <ClCompile Include="lua\ldump.c" />
+    <ClCompile Include="lua\lfunc.c" />
+    <ClCompile Include="lua\lgc.c" />
+    <ClCompile Include="lua\linit.c" />
+    <ClCompile Include="lua\liolib.c" />
+    <ClCompile Include="lua\llex.c" />
+    <ClCompile Include="lua\lmathlib.c" />
+    <ClCompile Include="lua\lmem.c" />
+    <ClCompile Include="lua\loadlib.c" />
+    <ClCompile Include="lua\lobject.c" />
+    <ClCompile Include="lua\lopcodes.c" />
+    <ClCompile Include="lua\loslib.c" />
+    <ClCompile Include="lua\lparser.c" />
+    <ClCompile Include="lua\lstate.c" />
+    <ClCompile Include="lua\lstring.c" />
+    <ClCompile Include="lua\lstrlib.c" />
+    <ClCompile Include="lua\ltable.c" />
+    <ClCompile Include="lua\ltablib.c" />
+    <ClCompile Include="lua\ltm.c" />
+    <ClCompile Include="lua\lundump.c" />
+    <ClCompile Include="lua\lvm.c" />
+    <ClCompile Include="lua\lzio.c" />
+    <ClCompile Include="lua\print.c" />
+    <ClCompile Include="sqlite\sqlite3.c" />
+    <ClCompile Include="expat\xmlparse.c" />
+    <ClCompile Include="expat\xmlrole.c" />
+    <ClCompile Include="expat\xmltok.c" />
+    <ClCompile Include="expat\xmltok_impl.c" />
+    <ClCompile Include="expat\xmltok_ns.c" />
+    <ClCompile Include="UnitTest++\AssertException.cpp" />
+    <ClCompile Include="UnitTest++\Checks.cpp" />
+    <ClCompile Include="UnitTest++\CurrentTest.cpp" />
+    <ClCompile Include="UnitTest++\DeferredTestReporter.cpp" />
+    <ClCompile Include="UnitTest++\DeferredTestResult.cpp" />
+    <ClCompile Include="UnitTest++\MemoryOutStream.cpp" />
+    <ClCompile Include="UnitTest++\ReportAssert.cpp" />
+    <ClCompile Include="UnitTest++\Test.cpp" />
+    <ClCompile Include="UnitTest++\TestDetails.cpp" />
+    <ClCompile Include="UnitTest++\TestList.cpp" />
+    <ClCompile Include="UnitTest++\TestReporter.cpp" />
+    <ClCompile Include="UnitTest++\TestReporterStdout.cpp" />
+    <ClCompile Include="UnitTest++\TestResults.cpp" />
+    <ClCompile Include="UnitTest++\TestRunner.cpp" />
+    <ClCompile Include="UnitTest++\TimeConstraint.cpp" />
+    <ClCompile Include="UnitTest++\XmlTestReporter.cpp" />
+    <ClCompile Include="UnitTest++\Win32\TimeHelpers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sample.lua" />
+    <None Include="Sample.xml" />
+    <None Include="Sample2.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{f15bdd3c-44d8-4ae4-b1b2-6f649bc15687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sqlite">
+      <UniqueIdentifier>{83dec873-73da-4795-95fa-36c385baa111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="expat">
+      <UniqueIdentifier>{56fe2273-0ccb-4314-be85-d4caf11c1f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest++">
+      <UniqueIdentifier>{ec19008d-4293-40f6-accd-1db5a1109eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest++\Win32">
+      <UniqueIdentifier>{02182621-875c-4e8e-bb3c-5ad5760153b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vmmlib">
+      <UniqueIdentifier>{040dc0bd-6580-4ce6-96d4-adfc555d1ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{41fc8dd7-199d-434d-82fc-64bc11bbb6cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CCTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JayFramework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLiteTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TableLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TableMapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="typedef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XML.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lapi.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lcode.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldebug.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldo.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lfunc.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lgc.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llex.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llimits.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lmem.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lobject.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lopcodes.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lparser.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstate.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstring.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltable.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltm.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.hpp">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lundump.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lvm.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lzio.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite\sqlite3.h">
+      <Filter>sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\amigaconfig.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\ascii.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\asciitab.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\expat.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\expat_external.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\iasciitab.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\internal.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\latin1tab.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\macconfig.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\nametab.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\utf8tab.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\winconfig.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\xmlrole.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\xmltok.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="expat\xmltok_impl.h">
+      <Filter>expat</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\AssertException.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\CheckMacros.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\Checks.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\Config.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\CurrentTest.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\DeferredTestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\DeferredTestResult.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\ExecuteTest.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\MemoryOutStream.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\ReportAssert.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\Test.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestDetails.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestList.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestMacros.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestReporterStdout.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestResults.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestRunner.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TestSuite.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TimeConstraint.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\TimeHelpers.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\UnitTest++.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\XmlTestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\Win32\TimeHelpers.h">
+      <Filter>UnitTest++\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\axisAlignedBoundingBox.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\details.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\exception.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\frustum.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\frustum.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\frustumCuller.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\frustumCuller.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\helperFunctions.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\jacobiSolver.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\jacobiSolver.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\lapack.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\lapack_includes.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\lapack_linear_least_squares.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\lapack_svd.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\lapack_types.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\linear_least_squares.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\matrix.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\matrix3.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\matrix4.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\matrix_functors.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\qr_decomposition.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\quaternion.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\quaternion.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\stringUtils.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\stringUtils.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\svd.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\svd.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vector.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vector2.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vector3.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vector4.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\visibility.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\visibility.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vmmlib.h">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vmmlib.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmlib\vmmlib_config.hpp">
+      <Filter>vmmlib</Filter>
+    </ClInclude>
+    <ClInclude Include="PointMass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CCTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JayFramework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLiteTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TableLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TableMapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lapi.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lauxlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lbaselib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcode.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldblib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldebug.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldo.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lfunc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lgc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\linit.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\liolib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\llex.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmathlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmem.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loadlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lobject.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lopcodes.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loslib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lparser.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstate.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstring.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstrlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltable.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltablib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lundump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lvm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lzio.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\print.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite\sqlite3.c">
+      <Filter>sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="expat\xmlparse.c">
+      <Filter>expat</Filter>
+    </ClCompile>
+    <ClCompile Include="expat\xmlrole.c">
+      <Filter>expat</Filter>
+    </ClCompile>
+    <ClCompile Include="expat\xmltok.c">
+      <Filter>expat</Filter>
+    </ClCompile>
+    <ClCompile Include="expat\xmltok_impl.c">
+      <Filter>expat</Filter>
+    </ClCompile>
+    <ClCompile Include="expat\xmltok_ns.c">
+      <Filter>expat</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\AssertException.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\Checks.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\CurrentTest.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\DeferredTestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\DeferredTestResult.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\MemoryOutStream.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\ReportAssert.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\Test.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestDetails.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestList.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestReporterStdout.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestResults.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TestRunner.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\TimeConstraint.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\XmlTestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\Win32\TimeHelpers.cpp">
+      <Filter>UnitTest++\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="PointMass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sample.lua">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sample.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sample2.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
