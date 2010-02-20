@@ -19,8 +19,8 @@ void PointMass::Verlet(float dt, const Vector3f& a)
 	__m128 oldPos = _mm_load_ps((float*)attrOld.xyzw);
 	__m128 dt2    = _mm_set1_ps(dt*dt);					// dt2 = fTimeStep*fTimeStep
 	__m128 acc    = _mm_load_ps((float*)a.xyz);			// acc = a vector
-		   acc	  = _mm_and_ps(acc, _mask128);			// preserve 'xyz' term and remove 'w' term
-	acc			  = _mm_mul_ps(acc, dt2);				// acc = a*fTimeStep*fTimeStep;
+	       acc    = _mm_and_ps(acc, _mask128);			// preserve 'xyz' term and remove 'w' term
+	acc		      = _mm_mul_ps(acc, dt2);				// acc = a*fTimeStep*fTimeStep;
 	oldPos		  = _mm_sub_ps(curPos, oldPos);			// oldPos = curPos-oldPos;
 	oldPos		  = _mm_add_ps(oldPos, acc);			// oldPos = oldPos+acc --> curPos-oldPos+a*fTimeStep*fTimeStep
 	curPos		  = _mm_add_ps(curPos, oldPos);			// curPos += oldPos;
