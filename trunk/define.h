@@ -18,3 +18,9 @@
 
 /** \brief SQLite */
 #define SQLITE
+
+#if defined DLLEXPORT
+#define EXPORT extern "C" __declspec(dllexport)
+#else
+#define EXPORT extern
+#endif

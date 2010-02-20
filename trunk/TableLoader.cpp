@@ -55,6 +55,8 @@ BOOL TableLoader::Load(ISax2dTable* table)
 	FILE*	pFile = NULL;
 #ifdef __STDC_WANT_SECURE_LIB__
 	errno_t	err = _wfopen_s(&pFile, desc.fileName.c_str(), L"r");
+	if (err)
+		return FALSE;
 #elif defined(__STDC__)
 	char fileName[128] = {0,};
 	wcstombs(fileName, desc.fileName.c_str(), desc.fileName.size());
@@ -118,7 +120,8 @@ void XMLCALL TableLoader::OnStartElement(void *userData, const XML_Char *name, c
 {
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
-	pWalker->OnStartElement(name, atts);
+	if (pWalker)
+		pWalker->OnStartElement(name, atts);
 }
 
 /** \brief Expat end element handler */
@@ -126,7 +129,8 @@ void XMLCALL TableLoader::OnEndElement(void *userData, const XML_Char *name)
 {
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
-	pWalker->OnEndElement(name);
+	if (pWalker)
+		pWalker->OnEndElement(name);
 }
 
 /** \brief Expat CDATA handler */
@@ -134,7 +138,7 @@ void XMLCALL TableLoader::OnCharacterData(void *userData, const XML_Char *s, int
 {
 	assert(userData);
 	TableWalker* pWalker = static_cast<TableWalker*>(userData);
-	if (pWalker->HasCurField() && s)
+	if (pWalker && pWalker->HasCurField() && s)
 	{
 		wchar_t	buf[MAX_XML_TAG_NAME_SIZE] = {0,};
 #ifdef __STDC_WANT_SECURE_LIB__

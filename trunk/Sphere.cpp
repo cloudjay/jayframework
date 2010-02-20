@@ -2,20 +2,20 @@
 
 Sphere::Sphere(void)
 {
-	cnr = Vector4f.ZERO;
+	attr = Vector4f::ZERO;
 }
 
 Aabbf Sphere::CalcAABB()
 {
 #ifdef USE_INTRIN
 	__declspec(align(16)) Vector4f vecMin, vecMax;
-	__m128 vecR = _mm_set1_ps(cnr.radius);						// vecR = { r, r, r, r }
-	__m128 vecC = _mm_load_ps((float*)cnr.xyzw);				// vecC = { x, y, z, r }
+	__m128 vecR = _mm_set1_ps(attr.radius);						// vecR = { r, r, r, r }
+	__m128 vecC = _mm_load_ps((float*)attr.xyzw);				// vecC = { x, y, z, r }
 	_mm_store_ps((float*)vecMin.xyzw, _mm_sub_ps(vecC, vecR));	// vecMin = vecC - vecR
 	_mm_store_ps((float*)vecMax.xyzw, _mm_add_ps(vecC, vecR));	// vecMax = vecC + vecR
 	return Aabbf(vecMin.getSphereCenter(), vecMax.getSphereCenter());
 #else
-	return Aabbf(cnr);
+	return Aabbf(attr);
 #endif
 }
 
@@ -53,9 +53,9 @@ BOOL Sphere::DoesCollide(const Sphere &other)
 		__declspec(align(16)) static long _mask[4] = {0,0,0,0x80000000};
 		__m128 _mask128 = *(__m128*)_mask;
 		__m128 s, s1, s2;
-		s	= _mm_load_ps((float*)cnr.xyzw);		// s = (x, y, z, r)
+		s	= _mm_load_ps((float*)attr.xyzw);		// s = (x, y, z, r)
 		s	= _mm_xor_ps(s, _mask128);				// s = (x, y, z, -r)
-		s1	= _mm_load_ps((float*)other.cnr.xyzw);	// s1 = (x1, y1, z1, r1)
+		s1	= _mm_load_ps((float*)other.attr.xyzw);	// s1 = (x1, y1, z1, r1)
 		s1	= _mm_sub_ps(s1, s);					// s1 = (x1-x, y1-y, z1-z, r1+r)
 		s2	= _mm_xor_ps(s1, _mask128);				// s2 = (x1-x, y1-y, z1-z, -(r1+r))
 		s1	= _mm_dp_ps(s1,s2,0xff);				// s1 = distSq-rSq
