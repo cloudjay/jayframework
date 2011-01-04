@@ -19,7 +19,7 @@ void TableMapper::Map()
 
 void TableMapper::MapItem(const HREC pRec)
 {
-	const SampleItem* pSample = (const SampleItem*)pRec;
+	const SampleCCItem* pSample = (const SampleCCItem*)pRec;
 	if (pSample == NULL)
 		return;
 	m_map.insert(std::make_pair(pSample->price, pSample->name));
@@ -67,8 +67,8 @@ SUITE(Mapper)
 
 struct SampleMapper
 {
-	SampleTable	table1;
-	SampleTable	table2;
+	SampleCCTable	table1;
+	SampleCCTable	table2;
 	TableLoader	loader;
 	TableMapper	mapper1;
 	TableMapper	mapper2;
