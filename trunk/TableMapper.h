@@ -2,7 +2,7 @@
 #define _TABLEMAPPER_H_
 
 #include "Windows.h"
-#include "SampleTable.h"
+#include "SampleCCTable.h"
 #include <map>
 
 typedef std::multimap<int, wstring>			SampleMap;

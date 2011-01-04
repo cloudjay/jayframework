@@ -1,7 +1,7 @@
 #pragma once
 #include "CCTable.h"
 
-class SQLiteTable : public CCTable, public ITable
+class SQLiteTable : public CCTable
 {
 public:
 	SQLiteTable();
