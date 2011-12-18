@@ -30,4 +30,15 @@
 	#include "sqlite/sqlite3.h"
 #endif
 
+#ifdef V8JS
+	#include "v8/include/v8.h"
+#ifdef WIN32
+	#undef BOOL
+	#include <Windows.h>
+	#pragma comment(lib, "winmm.lib")
+	#pragma comment(lib, "Ws2_32.lib")
+	#pragma warning(disable:4204)
+#endif
+#endif
+
 #endif /* JAYFRAMEWORK_H_ */

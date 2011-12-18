@@ -39,6 +39,9 @@
     <Filter Include="External Frameworks\vmmlib">
       <UniqueIdentifier>{040dc0bd-6580-4ce6-96d4-adfc555d1ea5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External Frameworks\v8">
+      <UniqueIdentifier>{def731f9-a6be-4750-9328-a83eefc46968}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
@@ -386,6 +389,27 @@
     <ClInclude Include="Sphere.h">
       <Filter>Physics</Filter>
     </ClInclude>
+    <ClInclude Include="v8\include\v8.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="v8\include\v8-debug.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="v8\include\v8-preparser.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="v8\include\v8-profiler.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="v8\include\v8stdint.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="v8\include\v8-testing.h">
+      <Filter>External Frameworks\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="JSRunner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JayFramework.cpp">
@@ -580,6 +604,9 @@
     <ClCompile Include="Sphere.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
+    <ClCompile Include="JSRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Sample.lua">
@@ -589,6 +616,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Sample2.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sample.js">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -2,6 +2,9 @@
 #ifdef EXPAT
 #include "XML.h"
 #endif
+#ifdef V8JS
+#include "JSRunner.h"
+#endif
 
 int main(void) {
 #ifdef UNITTEST
@@ -89,5 +92,14 @@ TEST(LuaSample)
 	lua_close(lua);
 }
 #endif	// LUA
+
+#ifdef V8JS
+TEST(V8Sample)
+{
+	JSRunner runner;
+	runner.Init(L"Sample.js");
+	runner.Run();
+}
+#endif
 
 #endif	// UNITTEST
