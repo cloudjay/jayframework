@@ -44,7 +44,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>v8\include;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;DLLEXPORT;_DEBUG;_CRT_SECURE_NO_WARNINGS;COMPILED_FROM_DSP;XML_UNICODE_WCHAR_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -62,7 +62,7 @@
       </DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib;lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -71,6 +71,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>v8\lib\v8_base.lib;v8\lib\preparser_lib.lib;v8\lib\v8_nosnapshot.lib;v8\lib\v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -103,6 +104,7 @@
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="ITable.h" />
     <ClInclude Include="JayFramework.h" />
+    <ClInclude Include="JSRunner.h" />
     <ClInclude Include="Physic.h" />
     <ClInclude Include="PhysicalEntity.h" />
     <ClInclude Include="PhysicalWorld.h" />
@@ -114,6 +116,12 @@
     <ClInclude Include="TableLoader.h" />
     <ClInclude Include="TableMapper.h" />
     <ClInclude Include="typedef.h" />
+    <ClInclude Include="v8\include\v8-debug.h" />
+    <ClInclude Include="v8\include\v8-preparser.h" />
+    <ClInclude Include="v8\include\v8-profiler.h" />
+    <ClInclude Include="v8\include\v8-testing.h" />
+    <ClInclude Include="v8\include\v8.h" />
+    <ClInclude Include="v8\include\v8stdint.h" />
     <ClInclude Include="XML.h" />
     <ClInclude Include="lua\lapi.h" />
     <ClInclude Include="lua\lauxlib.h" />
@@ -217,6 +225,7 @@
   <ItemGroup>
     <ClCompile Include="CCTable.cpp" />
     <ClCompile Include="JayFramework.cpp" />
+    <ClCompile Include="JSRunner.cpp" />
     <ClCompile Include="PhysicalEntity.cpp" />
     <ClCompile Include="PhysicalWorld.cpp" />
     <ClCompile Include="PointMass.cpp" />
@@ -281,6 +290,7 @@
     <ClCompile Include="UnitTest++\Win32\TimeHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Sample.js" />
     <None Include="Sample.lua" />
     <None Include="Sample.xml" />
     <None Include="Sample2.xml" />

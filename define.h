@@ -24,3 +24,7 @@
 #else
 #define EXPORT extern
 #endif
+
+#ifdef WIN32
+#define V8JS
+#endif
