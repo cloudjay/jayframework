@@ -24,7 +24,7 @@ struct TableDesc {
 class ITable {
 };
 
-class ISax2dTable : public ITable{
+class ISax2dTable : public ITable {
 public:
 	virtual const TableDesc& GetDesc() = 0;
 	virtual HREC		CreateRecord() = 0;
