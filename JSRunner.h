@@ -1,6 +1,8 @@
 #pragma once
 #include "JayFramework.h"
 
+#ifdef V8JS
+
 using namespace v8;
 
 class JSRunner
@@ -16,3 +18,4 @@ protected:
 	Persistent<Context>		context;
 };
 
+#endif
