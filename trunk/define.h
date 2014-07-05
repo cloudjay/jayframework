@@ -26,5 +26,5 @@
 #endif
 
 #ifdef WIN32
-#define V8JS
+// #define V8JS
 #endif

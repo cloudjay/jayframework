@@ -1,5 +1,7 @@
 #include "JSRunner.h"
 
+#ifdef V8JS
+
 JSRunner::JSRunner(void)
 {
 }
@@ -117,3 +119,5 @@ int JSRunner::Run(void)
 
 	return 0;
 }
+
+#endif
