@@ -102,7 +102,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalDependencies>v8\lib\v8_base.lib;v8\lib\preparser_lib.lib;v8\lib\v8_nosnapshot.lib;v8\lib\v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>

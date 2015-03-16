@@ -10,8 +10,8 @@
 #define SQL_LEN		128
 #define SAMPLE_TABLE	"SampleTable"
 #define CREATE_TABLE	"CREATE TABLE "SAMPLE_TABLE"(idx smallint, name varchar(10), price smallint)"
-#define INSERT_RECORD	"INSERT INTO "SAMPLE_TABLE" VALUES(%d, '', 0)"
-#define UPDATE_RECORD	"UPDATE "SAMPLE_TABLE" SET %s='%s' WHERE idx=%d"
+#define INSERT_RECORD	"INSERT INTO "SAMPLE_TABLE" VALUES(%u, '', 0)"
+#define UPDATE_RECORD	"UPDATE "SAMPLE_TABLE" SET %s='%s' WHERE idx=%u"
 #define CLEAR_TABLE	"DELETE FROM "SAMPLE_TABLE
 
 SQLiteTable::SQLiteTable()
